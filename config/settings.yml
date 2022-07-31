@@ -1,0 +1,21 @@
+review:
+  rating_min: 0
+  rating_max: 5
+  content_max: 120
+
+tour:
+  name_max: 120
+  description_max: 120
+  rating_min: 0
+  rating_max: 5
+  image_type: ["image/jpeg", "image/gif", "image/png"]
+  image_size: 5
+  image_resize: [500, 500]
+
+user:
+  name_max: 50
+  email_max: 255
+  email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  image_type: ["image/jpeg", "image/gif", "image/png"]
+  image_size: 5
+  image_resize: [500, 500]
