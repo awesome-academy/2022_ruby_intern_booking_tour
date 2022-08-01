@@ -2,6 +2,13 @@ en:
   sessions:
     new:
       login: "Log in"
+      email: "email"
+      your_email_address: "your email address"
+      password: "password"
+      enter_your_password: "enter your password"
+      sign_Up_Now: "Sign Up Now"
+      singup_description: "Sign up to get the full features of our site"
+      signup: "Sign up"
   layouts:
     header:
       log_out: "Log out"

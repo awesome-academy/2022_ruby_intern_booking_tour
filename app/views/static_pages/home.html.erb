@@ -1,9 +1,9 @@
-<%# <div class="colorlib-loader"></div> %>
+<div class="colorlib-loader"></div>
 <div id="page">
   <aside id="colorlib-hero">
     <div class="flexslider">
       <ul class="slides">
-        <li style="background-image: url(<%= asset_path("img_bg_1.jpg") %>);">
+        <li class="slides_1">
           <div class="overlay"></div>
           <div class="container-fluid">
             <div class="row">
@@ -15,7 +15,7 @@
             </div>
           </div>
         </li>
-        <li style="background-image: url(<%= asset_path("img_bg_2.jpg") %>);">
+        <li class="slides_2">
           <div class="overlay"></div>
           <div class="container-fluid">
             <div class="row">
@@ -27,7 +27,7 @@
             </div>
           </div>
         </li>
-        <li style="background-image: url(<%= asset_path("img_bg_5.jpg") %>);">
+        <li class="slides_3">
           <div class="overlay"></div>
           <div class="container-fluids">
             <div class="row">
@@ -40,7 +40,7 @@
             </div>
           </div>
         </li>
-        <li style="background-image: url(<%= asset_path("img_bg_4.jpg") %>);">
+        <li class="slides_4">
           <div class="overlay"></div>
           <div class="container-fluid">
             <div class="row">
@@ -169,56 +169,56 @@
   </div>
   <div class="tour-wrap">
     <a href="#" class="tour-entry animate-box">
-      <div class="tour-img" style="background-image: url(<%= asset_path("tour-1.jpg") %>);">
+      <div class="tour-img tour_1">
       </div>
       <span class="desc">
         <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span></p>
       </span>
     </a>
     <a href="#" class="tour-entry animate-box">
-      <div class="tour-img" style="background-image: url(<%= asset_path("tour-2.jpg") %>);">
+      <div class="tour-img tour_2">
       </div>
       <span class="desc">
         <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span></p>
       </span>
     </a>
     <a href="#" class="tour-entry animate-box">
-      <div class="tour-img" style="background-image: url(<%= asset_path("tour-3.jpg") %>);">
+      <div class="tour-img tour_3">
       </div>
       <span class="desc">
         <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span></p>
       </span>
     </a>
     <a href="#" class="tour-entry animate-box">
-      <div class="tour-img" style="background-image: url(<%= asset_path("tour-4.jpg") %>);">
+      <div class="tour-img tour_4">
       </div>
       <span class="desc">
         <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span></p>
       </span>
     </a>
     <a href="#" class="tour-entry animate-box">
-      <div class="tour-img" style="background-image: url(<%= asset_path("tour-5.jpg") %>);">
+      <div class="tour-img tour_5">
       </div>
       <span class="desc">
         <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span></p>
       </span>
     </a>
     <a href="#" class="tour-entry animate-box">
-      <div class="tour-img" style="background-image: url(<%= asset_path("tour-6.jpg") %>);">
+      <div class="tour-img tour_6">
       </div>
       <span class="desc">
         <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span></p>
       </span>
     </a>
     <a href="#" class="tour-entry animate-box">
-      <div class="tour-img" style="background-image: url(<%= asset_path("tour-7.jpg") %>);">
+      <div class="tour-img tour_7">
       </div>
       <span class="desc">
         <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span></p>
       </span>
     </a>
     <a href="#" class="tour-entry animate-box">
-      <div class="tour-img" style="background-image: url(<%= asset_path("tour-8.jpg") %>);">
+      <div class="tour-img tour_8">
       </div>
       <span class="desc">
         <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span></p>
@@ -239,7 +239,7 @@
         <div class="owl-carousel2">
           <div class="item">
             <div class="testimony text-center">
-              <span class="img-user" style="background-image: url(<%= asset_path("person1.jpg") %>);"></span>
+              <span class="img-user img-user-1"></span>
               <span class="user"><%= t ".alysha_Myers" %></span>
               <small><%= t ".miami_Florida,_USA" %></small>
               <blockquote>
@@ -249,7 +249,7 @@
           </div>
           <div class="item">
             <div class="testimony text-center">
-              <span class="img-user" style="background-image: url(<%= asset_path("person2.jpg") %>);"></span>
+              <span class="img-user img-user-2"></span>
               <span class="user"><%= t ".alysha_Myers" %></span>
               <small><%= t ".miami_Florida,_USA" %></small>
               <blockquote>
@@ -259,7 +259,7 @@
           </div>
           <div class="item">
             <div class="testimony text-center">
-              <span class="img-user" style="background-image: url(<%= asset_path("person3.jpg") %>);"></span>
+              <span class="img-user img-user-3"></span>
               <span class="user"><%= t ".alysha_Myers" %></span>
               <small><%= t ".miami_Florida,_USA" %></small>
               <blockquote>
@@ -272,14 +272,14 @@
     </div>
   </div>
 </div>
-<div id="colorlib-subscribe" style="background-image: url(<%= asset_path("img_bg_2.jpg") %>);" data-stellar-background-ratio="0.5">
+<div id="colorlib-subscribe" data-stellar-background-ratio="0.5">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
         <h2><%= t ".sign_Up_Now" %></h2>
         <p><%= t ".singup_description" %></p>
-        <button class="btn btn-primary"><%= t(".signup") %></button>
+        <%= link_to t(".signup"), signup_path, class: "btn btn-primary" %>
       </div>
     </div>
   </div>

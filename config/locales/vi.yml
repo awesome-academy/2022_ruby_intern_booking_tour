@@ -2,6 +2,13 @@ vi:
   sessions:
     new:
       login: "đăng nhập"
+      email: "e-mail"
+      your_email_address: " địa chỉ email của bạn"
+      password: " mật khẩu mở khóa"
+      enter_your_password: " nhập mật khẩu của bạn"
+      sign_Up_Now: " Đăng ký ngay"
+      singup_description: " Đăng ký để có được các tính năng đầy đủ của trang web của chúng tôi"
+      signup: " Đăng ký"
   layouts:
     header:
       log_out: "Đăng xuất"
