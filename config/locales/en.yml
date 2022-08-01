@@ -58,17 +58,6 @@ en:
       sign_Up_Now: "Sign Up Now"
       singup_description: "Sign up to get the full features of our site"
       signup: "Sign up"
-    tour:
-      find_Tours: "Find Tours"
-      start_date: "start date"
-      end_date: "end date"
-      find_your_tour: "find your tour"
-      name: "Name"
-      price_Range: "Price Range"
-      price_from: "Price from:"
-      price_to: "Price to:"
-      review_Rating: "Review Rating"
-      search_tours: "search tours"
   users:
     show:
       show_user_failed: "Show user failed!"
@@ -114,3 +103,15 @@ en:
       quantity: "quantity"
       total_price: "total price"
       submit: "submit"
+    index:
+      find_Tours: "Find Tours"
+      start_date: "start date"
+      end_date: "end date"
+      find_your_tour: "find your tour"
+      name: "Name"
+      price_Range: "Price Range"
+      price_from: "Price from:"
+      price_to: "Price to:"
+      review_Rating: "Review Rating"
+      search_tours: "search tours"
+      no_tours: "no tours"

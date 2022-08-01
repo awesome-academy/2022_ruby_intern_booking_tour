@@ -58,17 +58,6 @@ vi:
       sign_Up_Now: " Đăng ký ngay"
       singup_description: " Đăng ký để có được các tính năng đầy đủ của trang web của chúng tôi"
       signup: " Đăng ký"
-    tour:
-      find_Tours: "Tìm chuyến tham quan"
-      find_your_tour: " tìm chuyến tham quan của bạn"
-      price_Range: " Phạm vi giá"
-      price_from: " Giá từ:"
-      price_to: " Giá thành:"
-      review_Rating: " Đánh giá xếp hạng"
-      search_tour: " tìm kiếm các chuyến tham quan"
-      start_date: " ngày bắt đầu"
-      end_date: " ngày cuối"
-      name: "Tên"
   users:
     show:
       show_user_failed: "Hiển thị danh sách user thất bại!"
@@ -114,3 +103,15 @@ vi:
       quantity: số lượng
       total_price: " Tổng giá"
       submit: " Gửi đi"
+    index:
+      find_Tours: "Tìm chuyến tham quan"
+      find_your_tour: " tìm chuyến tham quan của bạn"
+      price_Range: " Phạm vi giá"
+      price_from: " Giá từ:"
+      price_to: " Giá thành:"
+      review_Rating: " Đánh giá xếp hạng"
+      search_tour: " tìm kiếm các chuyến tham quan"
+      start_date: " ngày bắt đầu"
+      end_date: " ngày cuối"
+      name: "Tên"
+      no_tours: "không có chuyến tham quan"

@@ -1,0 +1,17 @@
+<div class="col-sm-12">
+  <hr>
+  <div class="row">
+    <div class="col-sm-3">
+      <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+      <div class="review-block-name"><a href="#"><%= @review %></a></div>
+      <div class="review-block-date"><%= %><br>
+        <%= review.created_at %> </div>
+    </div>
+    <div class="col-sm-9">
+      <div class="review-block-rate">
+        <span>  <%= sanitize render_star(@tour.avg_rating), attributes: %w(class data-icon) %> </span>
+      </div>
+      <div class="review-block-title"><%= review.content %></div>
+    </div>
+  </div>
+</div>
