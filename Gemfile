@@ -21,15 +21,13 @@ gem "pagy"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.6"
 gem "rails-i18n"
+gem "sassc-rails"
 gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 
-group :development, :test do
-  gem "byebug", platforms: %i(mri mingw x64_mingw)
-end
-
 group :development do
+  gem "faker", "2.1.2"
   gem "listen", "~> 3.3"
   gem "rack-mini-profiler", "~> 2.0"
   gem "spring"
@@ -45,6 +43,7 @@ end
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
 
 group :development, :test do
+  gem "byebug", platforms: %i(mri mingw x64_mingw)
   gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false

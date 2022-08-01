@@ -12,5 +12,7 @@ module RubyInternBookingTour
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.i18n.available_locales = [:en, :vi]
     config.i18n.default_locale = :vi
+    config.assets.paths << Rails.root.join("app", "assets", "flash")
+    config.assets.enabled = true
   end
 end

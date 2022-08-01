@@ -20,3 +20,4 @@ user:
   image_type: ["image/jpeg", "image/gif", "image/png"]
   image_size: 5
   image_resize: [500, 500]
+  per_page: 5
