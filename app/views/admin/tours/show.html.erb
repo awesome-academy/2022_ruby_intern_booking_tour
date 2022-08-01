@@ -1,38 +1,113 @@
-<div class="container show_tours_admin">
-  <div class="row">
-    <div class="col-md-8 col-sm-12">
-      <div class="hotel-entry">
-        <div class="row">
-          <div class="col-md-8">
-            <%= image_tag @tour.display_image, class: "hotel-img"  if @tour.image.attached? %>
-            <p class="price"><span>$<%= @tour.price %></span><small> <%= t ".night" %></small></p>
-            <%= sanitize render_star(@tour.avg_rating), attributes: %w(class data-icon) %>
+<div class="col-12">
+  <div class="content">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card card-user">
+          <div class="image">
           </div>
-          <div class="col-md-4">
-            <div class="flex-container">
-              <%= link_to edit_admin_tour_path(@tour), class:"text-info" do %>
-                <i class="fas fa-pencil-alt"></i>
-              <% end %>
-              <%= link_to @tour, method: :delete, data: {confirm: t(".delete")}, class: "text-danger" do %>
-                <i class="far fa-trash-alt"></i>
-              <% end %>
+          <div class="card-body">
+            <div class="author">
+              <%= image_tag @tour.display_image, class: "hotel-img"  if @tour.image.attached? %>
+              <h6 class="title"><%= @tour.name %></h6>
+              <p class="description text-center">
+                <%= sanitize render_star(@tour.avg_rating), attributes: %w(class data-icon) %>
+              </p>
+              <p class="description">
+                <%= @tour.description %>
+              </p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <hr>
+            <div class="button-container">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-6 ml-auto">
+                  <h6><%= @tour.stock %><br>
+                    <small><%= t ".stock" %></small></h6>
+                </div>
+                <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
+                  <h6><%= @tour.price %><br>
+                    <small><%= t ".price" %></small></h6>
+                </div>
+                <div class="col-lg-3 mr-auto">
+                  <h6><br>
+                    <small><%= t ".count" %></small></h6>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="desc">
-          <p class="star">
-            <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
-            <%= @tour.reviews.count %> <%= t ".reviews" %>
-          </p>
-          <h3><a href="hotel-room.html"><%= @tour.name %></a></h3>
-          <span class="place"><%= @tour.category.name %></span>
-          <p class="description">
-            <%= @tour.description %>
-          </p>
+      </div>
+      <div class="col-md-8">
+        <div class="card card-user">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Name</label>
+                  <h6><%= @tour.name %></h6>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Price</label>
+                  <h6><%= @tour.price %></h6>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Category</label>
+                  <h6><%= @tour.category_name %></h6>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>Start date</label>
+                  <%= date_field_tag :start_date,nil, class: "form-control", placeholder: "Your Price" %>
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>End date</label>
+                  <%= date_field_tag :end_date, nil, class: "form-control", placeholder: "Your Price" %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <% if @tour.present? %>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Avg Ragings</label>
+                    <div>
+                      <%= sanitize render_star(@tour.avg_rating), attributes: %w(class data-icon) %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Description</label>
+                  <h6><%= @tour.description %></h6>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="row">
+      <div class="desc">
+        <p class="star">
+          <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+        </div>
+      </div>
+    </div>
+          <%= @tour.reviews.count %> <%= t ".reviews" %>
+  </p>
   <%= render "admin/reviews/review_ratings", reviews: @reviews %>
   <%= render "admin/reviews/review_list", reviews: @reviews %>
 </div>

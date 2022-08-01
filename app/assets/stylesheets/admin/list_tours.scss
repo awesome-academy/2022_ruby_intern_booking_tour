@@ -5,12 +5,12 @@
     max-width: 1400px;
   }
 
-  .hotel-img{
+  .hotel-img {
     width: 100%;
     height: auto;
   }
 
-  .description{
+  .description {
     width: 100%;
     text-align: left;
     font-size: 16px;
@@ -18,15 +18,26 @@
     line-height: 24px;
   }
 
-  .pagy-bootstrap-nav{
+  .pagy-bootstrap-nav {
     text-align: center;
   }
 
-  .flex-container{
+  .flex-container {
     font-size: 24px;
     display: flex;
     justify-content: flex-end;
     gap: 16px;
     align-items: center;
+  }
+
+  svg,
+  i {
+    font-size: 20px;
+  }
+}
+
+.form_tour{
+  svg{
+    font-size: 22px;
   }
 }

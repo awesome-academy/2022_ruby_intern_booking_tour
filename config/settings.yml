@@ -45,3 +45,6 @@ admin:
     price:
       asc: "3"
       desc: "4"
+
+image:
+  type: <%= %w(image/jpeg image/gif image/png) %>

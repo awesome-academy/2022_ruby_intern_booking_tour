@@ -12,5 +12,15 @@
  *
  *= require_self
  */
- @import "toastr";
- @import "./admin/*";
+ @import './admin/*';
+ @import './review.scss';
+ @import './reviews.scss';
+ @import 'toastr';
+
+ *{
+  font-size: 14px;
+
+  svg{
+    font-size: 20px;
+  }
+ }

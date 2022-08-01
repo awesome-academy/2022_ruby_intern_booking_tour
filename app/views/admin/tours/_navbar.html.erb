@@ -15,7 +15,7 @@
     <div class="col-md-6">
       <div class="form-group search_name">
         <div class="flex-container">
-          <%= select_tag(:order_tours_admin, options_for_select([["Sắp xếp theo tên tăng dần",1],["Sắp xếp theo tên giảm dần",2],["Sắp xếp giá tăng dần",3],["Sắp xếp giá giảm dần",4]]), class:"form-control") %>
+          <%= select_tag(:order_tours_admin, options_for_select([[Settings.admin.tour.name.asc,1],[Settings.admin.tour.name.desc,2],[Settings.admin.tour.price.asc,3],[Settings.admin.tour.price.desc,4]]), class:"form-control") %>
           <%= button_tag(type: "submit") do %>
             <span class="iconify" data-icon="bxs:sort-alt"></span>
           <% end %>

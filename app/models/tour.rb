@@ -7,6 +7,7 @@ class Tour < ApplicationRecord
   has_many :reviews, dependent: :destroy
   belongs_to :category
   has_many :reviews, dependent: :destroy
+  after_update :send_email_update_tour
 
   has_one_attached :image
 
@@ -102,5 +103,9 @@ class Tour < ApplicationRecord
                  .order_by_price(order_price)
                  .order_by_name(order_name)
     @tours
+  end
+
+  def send_email_update_tour
+    TourMailer.send_update_tour self
   end
 end

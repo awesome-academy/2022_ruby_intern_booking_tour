@@ -1,0 +1,53 @@
+.list_tours_request {
+  .container {
+    max-width: 1400px;
+  }
+
+  span {
+    font-size: 16px;
+  }
+}
+
+.show_tour_request {
+  .hotel-entry {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      margin: 0px;
+
+    }
+    .badge_details {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      position: absolute;
+      width: 180px;
+      height: 50px;
+      text-align: center;
+      top: 0px;
+      right: 0px;
+      z-index: 50;
+      transform: rotateZ(45deg) translateX(3.5rem);
+      &__success {
+        color: #fff;
+        background-color: #5cb85c;
+      }
+
+      &__danger {
+        color: #fff;
+        background-color: #d43f3a;
+      }
+
+      &__pending {
+        color: #fff;
+        background-color: #f7cb73;
+      }
+    }
+
+    .none {
+      display: none;
+    }
+  }
+}
