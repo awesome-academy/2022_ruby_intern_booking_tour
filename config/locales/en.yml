@@ -18,6 +18,7 @@ en:
     header:
       log_out: "Log out"
       home: "home"
+      users: "users"
       tours: "tours"
       profile: "profile"
       login: "Log in"
@@ -61,65 +62,63 @@ en:
       sign_Up_Now: "Sign Up Now"
       singup_description: "Sign up to get the full features of our site"
       signup: "Sign up"
-  users:
-    show:
-      show_user_failed: "Show user failed!"
-      show_user_success: "Show users successfully!"
-    update:
-      update_success: "Update successfully!"
-      update_failed: "Update failed!"
-    destroy:
-      destroy_success: "Destroy successfully!"
-      destroy_failed: "Destroy failed!"
-    form:
-      email: "Email"
-      password: "Password"
-      password_confirm: "Password Confirm"
-      name: "Name"
-    edit:
-      button_text: "Edit"
-    check_admin:
-      permission: "You dont have permission!"
-    index:
-      name: "Your name"
-      status: "Status"
-      action: "Action"
-    load_user:
-      load_success: Load user success
-      load_failed: Load user failed
-    tour:
-      find_Tours: "Find Tours"
-      find_your_tour: "find your tour"
-      price_Range: "Price Range"
-      price_from: "Price from:"
-      price_to: "Price to:"
-      review_Rating: "Review Rating"
-      search_tours: "search tours"
-  tours:
-    tour:
-      day: "Day"
-    show:
-      find_Tours: "Find Tours"
-      start_date: "start date"
-      end_date: "end date"
-    booking:
-      quantity: "quantity"
-      total_price: "total price"
-      submit: "submit"
-    index:
-      find_Tours: "Find Tours"
-      start_date: "start date"
-      end_date: "end date"
-      find_your_tour: "find your tour"
-      name: "Name"
-      price_Range: "Price Range"
-      price_from: "Price from:"
-      price_to: "Price to:"
-      review_Rating: "Review Rating"
-      search_tours: "search tours"
-      no_tours: "no tours"
-  tour_requests:
-    create:
-      tour_request_success: "booking successful"
-      tour_request_error: "booking failed"
-      quantity_higher_than_stock: "quantity higher than stock"
+  admin:
+    users:
+      show:
+        show_user_failed: "Show user failed!"
+        show_user_success: "Show users successfully!"
+      update:
+        update_success: "Update successfully!"
+        update_failed: "Update failed!"
+      destroy:
+        destroy_success: "Destroy successfully!"
+        destroy_failed: "Destroy failed!"
+      form:
+        email: "Email"
+        password: "Password"
+        password_confirm: "Password Confirm"
+        name: "Name"
+      edit:
+        button_text: "Edit"
+      check_admin:
+        permission: "You dont have permission!"
+      index:
+        name: "Your name"
+        status: "Status"
+        action: "Action"
+    tours:
+      form:
+        name: Name
+        description: Description
+        avg_rating: Rating
+        category: Category
+        image: Image
+        price: Price
+        start_date: Start date
+        end_date: End date
+      edit:
+        button_text: Edit
+      new:
+        button_text: Add
+      create:
+        tours_create_successful: Create tour successfully!
+        tours_not_saved: Tour not saved!
+      show:
+        show_tour_success: Show tour successfully!
+        show_tour_failed: Show tour failed!
+      update:
+        update_success: Update successfully!
+        update_failed: Update field!
+      destroy:
+        destroy_success: Destroy successfully!
+        destroy_danger: Destroy field!
+      tour:
+        night: /night
+        reviews: reviews
+        delete: delete
+    review_ratings:
+        title: Average user rating
+        title_breakdown: Rating breakdown
+    reviews:
+      review:
+        confirm: Confirm

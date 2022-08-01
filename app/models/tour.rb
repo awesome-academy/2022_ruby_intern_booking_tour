@@ -1,8 +1,12 @@
 class Tour < ApplicationRecord
+  UPDATABLE_ATTRS = %i(name description price image start_date end_date
+avg_rating category_id).freeze
+
   has_many :tour_requests, dependent: :destroy
   has_many :discounts, dependent: :destroy
   has_many :reviews, dependent: :destroy
   belongs_to :category
+  has_many :reviews, dependent: :destroy
 
   has_one_attached :image
 
@@ -20,4 +24,13 @@ class Tour < ApplicationRecord
 
   scope :incre_order, ->{order(id: :asc)}
   scope :order_rating, ->(rating){where("avg_rating = ?", rating)}
+  scope :recent_tours, ->{order(created_at: :desc)}
+
+  def display_image
+    image.variant resize_to_limit:
+    [
+      Settings.tour.height_limit,
+      Settings.tour.width_limit
+    ]
+  end
 end

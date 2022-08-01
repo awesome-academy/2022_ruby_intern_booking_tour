@@ -1,0 +1,63 @@
+<div id="colorlib-contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 animate-box">
+        <%= form_for [:admin, @tour] do |f| %>
+          <%= render "layouts/error_messages", object: f.object %>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <%= f.label t(".name") %>
+              <%= f.text_field :name, class: "form-control", placeholder: "Your tour's name" %>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <%= f.label t(".description") %>
+              <%= f.text_area :description, class: "form-control", placeholder: "Your Description" %>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <%= f.label t(".category") %>
+              <%= f.select :category_id, load_category,  {}, {class: "form-control"} %>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <%= f.label t(".price") %>
+              <%= f.text_field :price, {class: "form-control"} %>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-6">
+              <%= f.label t(".start_date") %>
+              <%= f.date_select :start_date, {start_year: Time.now.year, end_year: Time.now.year + 5}, {:class => "form-control"} %>
+            </div>
+            <div class="col-md-6">
+              <%= f.label t(".end_date") %>
+              <%= f.date_select :end_date, {start_year: Time.now.year, end_year: Time.now.year + 5}, {:class => "form-control"} %>
+            </div>
+          </div>
+          <% if @tour.blank? %>
+            <div class="row form-group">
+              <div class="col-md-12">
+                <%= f.label t(".avg_rating") %>
+                <%= f.text_field :avg_rating, class: "form-control" %>
+              </div>
+            </div>
+          <% end %>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <%= f.label t(".image") %>
+              <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+              <%= image_tag @tour.display_image, class: "hotel-img tour__preview"  if @tour.image.attached? %>
+            </div>
+          </div>
+          <div class="form-group text-center">
+            <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

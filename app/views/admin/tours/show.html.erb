@@ -1,0 +1,37 @@
+<div class="container show_tours_admin">
+  <div class="row">
+    <div class="col-md-8 col-sm-12">
+      <div class="hotel-entry">
+        <div class="row">
+          <div class="col-md-8">
+            <%= image_tag @tour.display_image, class: "hotel-img"  if @tour.image.attached? %>
+            <p class="price"><span>$<%= @tour.price %></span><small> <%= t ".night" %></small></p>
+          </div>
+          <div class="col-md-4">
+            <div class="flex-container">
+              <%= link_to edit_admin_tour_path(@tour), class:"text-info" do %>
+                <i class="fas fa-pencil-alt"></i>
+              <% end %>
+              <%= link_to @tour, method: :delete, data: {confirm: t(".delete")}, class: "text-danger" do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="desc">
+          <p class="star">
+            <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+            <%= @tour.reviews.count %> <%= t ".reviews" %>
+          </p>
+          <h3><a href="hotel-room.html"><%= @tour.name %></a></h3>
+          <span class="place"><%= @tour.category.name %></span>
+          <p class="description">
+            <%= @tour.description %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render "admin/reviews/review_ratings", reviews: @reviews %>
+  <%= render "admin/reviews/review_list", reviews: @reviews %>
+</div>

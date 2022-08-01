@@ -3,6 +3,8 @@ review:
   rating_max: 5
   content_max: 120
   review_per_page: 5
+  admin_per_page: 7
+  star: 5
 
 tour:
   name_max: 120
@@ -14,6 +16,9 @@ tour:
   image_resize: [500, 500]
   tour_per_page: 30
   default_quantity: 1
+  per_page_admin: 4
+  height_limit: 500
+  width_limit: 500
 
 user:
   name_max: 50
@@ -24,3 +29,6 @@ user:
   image_size: 5
   image_resize: [500, 500]
   per_page: 5
+
+tours_request:
+  per_page_admin: 8
