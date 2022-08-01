@@ -132,86 +132,20 @@ en:
     reviews:
       review:
         confirm: Confirm
-  users:
-    show:
-      show_user_failed: "Show user failed!"
-      show_user_success: "Show users successfully!"
-    update:
-      update_success: "Update successfully!"
-      update_failed: "Update failed!"
-    destroy:
-      destroy_success: "Destroy successfully!"
-      destroy_failed: "Destroy failed!"
-    form:
-      email: "Email"
-      password: "Password"
-      password_confirm: "Password Confirm"
-      name: "Name"
-    edit:
-      button_text: "Edit"
-    check_admin:
-      permission: "You dont have permission!"
-    index:
-      name: "Your name"
-      status: "Status"
-      action: "Action"
-    load_user:
-      load_success: Load user success
-      load_failed: Load user failed
-    tour:
-      find_Tours: "Find Tours"
-      find_your_tour: "find your tour"
-      price_Range: "Price Range"
-      price_from: "Price from:"
-      price_to: "Price to:"
-      review_Rating: "Review Rating"
-      search_tours: "search tours"
-  tours:
-    tour:
-      day: "Day"
-    show:
-      find_Tours: "Find Tours"
-      start_date: "start date"
-      end_date: "end date"
-      day: "Day"
-      stock: "Stock: "
-    booking:
-      quantity: "quantity"
-      total_price: "total price"
-      submit: "submit"
-    index:
-      find_Tours: "Find Tours"
-      start_date: "start date"
-      end_date: "end date"
-      find_your_tour: "find your tour"
-      name: "Name"
-      price_Range: "Price Range"
-      price_from: "Price from:"
-      price_to: "Price to:"
-      review_Rating: "Review Rating"
-      search_tours: "search tours"
-      no_tours: "no tours"
-  tour_requests:
-    create:
-      tour_request_success: "booking successful"
-      tour_request_error: "booking failed"
-      quantity_higher_than_stock: "quantity higher than stock"
-    index:
-      your_tours: "Your Tours"
-    update:
-      quantity_higher_than_stock: "quantity higher than stock"
-      tour_request_updated: "tour request updated"
-      update_failed: "update failed"
-      tour_request_error: "booking failed"
-    destroy:
-      tour_request_cancelled: "tour request cancelled"
-      cancel_failed: "tour request cancel failed"
-    tour_request:
-      your_tours: "Your Tours"
-      quantity: "quantity"
-      total_price: "total price"
-      start_date: "start date"
-      end_date: "end date"
-      change: "Change"
-      day: "Day"
-      stock: "Stock: "
+    tour_requests:
+      destroy:
+        destroy_success: Destroy successfully
+        destroy_danger: Destroy failed
+      tour_request:
+        delete: Delete
+        userName: User's Name
+        userEmail: User's email
+        startDate: Start Date
+        endDate: End Date
+        btn_approve: Approve
+        btn_reject: Reject
+        btn_delete: Delete
+      badge_request:
+        badge__pending: Pending
+        badge__approve: Approve
+        badge__rejected: Rejected

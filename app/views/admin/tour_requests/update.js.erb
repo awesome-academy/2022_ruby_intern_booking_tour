@@ -1,0 +1,6 @@
+$('#badge_request').html('<%= j render "badge_request", tour_request: @tour_request %>');
+<% if @tour_request.rejected? %>
+  $('#delete_tour_request').removeClass("none")
+<% else %>
+  $('#delete_tour_request').addClass("none")
+<% end %>

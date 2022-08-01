@@ -10,6 +10,11 @@ avg_rating category_id).freeze
 
   has_one_attached :image
 
+  delegate :name, to: :category, prefix: true
+
+  UPDATABLE_ATTRS = %i(name description price image start_date end_date
+                        avg_rating category_id).freeze
+
   validates :name, presence: true,
                         length: {maximum: Settings.tour.name_max}
   validates :description, presence: true,

@@ -1,0 +1,56 @@
+<div class="col-md-12 col-sm-12 animate-box">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="hotel-entry">
+        <%= render "badge_request", tour_request: tour_request %>
+        <%= link_to admin_tour_path(tour_request.tour.id) do %>
+          <%= image_tag tour_request.tour.display_image, class: "hotel-img"  if tour_request.tour_image.attached? %>
+          <p class="price"><span><%= number_to_currency(tour_request.tour_price) %></span><small> <%= t ".night" %></small></p>
+        <% end %>
+        <div class="desc">
+          <p class="star">
+            <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+            <%= tour_request.tour.reviews.count %> <%= t ".reviews" %>
+          </p>
+          <h3><%= tour_request.tour_name %></h3>
+          <span class="place"><%= tour_request.tour.category_name %></span>
+          <p class="description">
+            <%= tour_request.tour_description %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 animate-box">
+          <form action="#" class="form__info">
+            <div class="row form-group">
+              <div class="col-md-6 padding-bottom">
+                <label for="fname"><%= t ".userName" %></label>
+                <%= text_field :name, "", class: "form-control", value: tour_request.user_name, disabled: true %>
+              </div>
+              <div class="col-md-6">
+                <label for="lname"><%= t ".userEmail" %></label>
+                <%= text_field :email, "", class: "form-control", value: tour_request.user_email, disabled: true %>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-6">
+                <label for="subject"><%= t ".startDate" %></label>
+                <%= date_field :email, "", class: "form-control", value: tour_request.tour_start_date.strftime("%F"), disabled: true %>
+              </div>
+              <div class="col-md-6">
+                <label for="subject"><%= t ".endDate" %></label>
+                <%= date_field :email, "", class: "form-control", value: tour_request.tour_end_date.strftime("%F"), disabled: true %>
+              </div>
+            </div>
+          </form>
+          <%= link_to t(".btn__approve"), admin_tour_request_path(tour_request.id, sub: "approve") ,class:"btn btn-sm btn-success", method: :patch, remote: true %>
+          <%= link_to t(".btn__reject"), admin_tour_request_path(tour_request.id, sub: "reject") , class:"btn btn-sm btn-warning", method: :patch, remote: true %>
+          <%= link_to t(".btn__delete"), admin_tour_request_path(tour_request.id) ,id: "delete_tour_request" ,
+              class:"btn btn-sm btn-danger #{tour_request.approved? && "none"} ", method: :delete, remote: true, data: {confirm: t(".delete")} %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

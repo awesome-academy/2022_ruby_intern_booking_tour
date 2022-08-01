@@ -8,7 +8,8 @@ class TourRequest < ApplicationRecord
   belongs_to :tour
 
   delegate :image, :avg_rating, :name, :price, :stock, :end_date, :start_date,
-           to: :tour, prefix: true
+           :description, to: :tour, prefix: true
+  delegate :name, :email, to: :user, prefix: true
 
   UPDATABLE_ATTRS = %i(user_id tour_id quantity total_price).freeze
 
