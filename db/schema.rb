@@ -41,14 +41,14 @@ ActiveRecord::Schema.define(version: 2022_07_31_140128) do
   end
 
   create_table "categories", charset: "utf8mb3", force: :cascade do |t|
-    t.string "category_name"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "discounts", charset: "utf8mb3", force: :cascade do |t|
     t.decimal "discount_rate", precision: 10
-    t.boolean "activated"
+    t.boolean "activated", default: true
     t.bigint "tour_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2022_07_31_140128) do
   create_table "request_histories", charset: "utf8mb3", force: :cascade do |t|
     t.integer "quantity"
     t.decimal "total_price", precision: 10
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "user_id", null: false
     t.bigint "tour_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2022_07_31_140128) do
   create_table "tour_requests", charset: "utf8mb3", force: :cascade do |t|
     t.integer "quantity"
     t.decimal "total_price", precision: 10
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "user_id", null: false
     t.bigint "tour_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -91,8 +91,8 @@ ActiveRecord::Schema.define(version: 2022_07_31_140128) do
   end
 
   create_table "tours", charset: "utf8mb3", force: :cascade do |t|
-    t.string "tour_name"
-    t.text "tour_description"
+    t.string "name"
+    t.text "description"
     t.decimal "price", precision: 10
     t.decimal "avg_rating", precision: 10
     t.datetime "start_date"
@@ -106,7 +106,8 @@ ActiveRecord::Schema.define(version: 2022_07_31_140128) do
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.integer "role"
+    t.integer "role", default: 1
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

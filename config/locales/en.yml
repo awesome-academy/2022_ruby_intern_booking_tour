@@ -1,33 +1,47 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  sessions:
+    new:
+      login: "Log in"
+  layouts:
+    header:
+      log_out: "Log out"
+      home: "home"
+      tours: "tours"
+      profile: "profile"
+      login: "Log in"
+    footer:
+      tour_agency: "Tour agency"
+      book_now: "book now"
+      top_deals: "top deals"
+      blog_post: "blog post"
+      contact_information: "contact information"
+  static_pages:
+    home:
+      amazing_maldivest_tour: "amazing maldivest tour"
+      from_greece_to_spain: "from greece to spain"
+      explore_our_most_travel_agency: "explore our most travel agency"
+      our_travel_agency: "our travel agency"
+      experience_the: "experience the"
+      best_trip_ever: "best trip ever"
+      search_tours: "search tours"
+      tour_name: "tour name"
+      search_Location: "search Location"
+      category: "category"
+      start_date: "start date"
+      check-in_date: "check-in date"
+      end_date: "end date"
+      check-out_date: "check-out date"
+      amazing_travel: "amazing travel"
+      our_cruises: "our cruises"
+      book_your_trip: "book your trip"
+      nice_support: "nice support"
+      travel_description: "separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies"
+      popular_destination: "popular destination"
+      talk_destination: "we love to tell our successful far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts"
+      guests_says: "Our Satisfied Guests says"
+      alysha_Myers: "Alysha Myers"
+      miami_Florida,_USA: "Miami Florida, USA"
+      guests_comments: "a small river named Duden flows by their place and supplies it with the necessary regelialia"
+      sign_Up_Now: "Sign Up Now"
+      singup_description: "Sign up to get the full features of our site"
+      signup: "Sign up"

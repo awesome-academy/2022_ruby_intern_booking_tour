@@ -1,0 +1,27 @@
+<nav class="colorlib-nav" role="navigation">
+  <div class="top-menu">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 text-right menu-1">
+          <ul>
+            <li>
+              <%= link_to t(".home"), root_path %>
+            </li>
+            <li>
+              <%= link_to t(".tours"), "#" %>
+            </li>
+            <li>
+              <%= link_to t(".profile"), "#" %>
+            </li>
+            <li>
+              <%= link_to t(".log_out"), logout_path, method: :delete %>
+            </li>
+            <li>
+              <%= link_to t(".login"), login_path %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
