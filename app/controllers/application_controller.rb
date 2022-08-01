@@ -27,4 +27,16 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t ".check_admin.permission"
     redirect_to root_path
   end
+
+  def success_format title
+    respond_to do |format|
+      format.js{flash[:success] = title}
+    end
+  end
+
+  def danger_format title
+    respond_to do |format|
+      format.js{flash[:danger] = title}
+    end
+  end
 end

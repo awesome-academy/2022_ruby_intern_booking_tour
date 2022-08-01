@@ -17,6 +17,8 @@ class User < ApplicationRecord
                        allow_nil: true
   has_secure_password
 
+  scope :lastest, ->{order(created_at: :desc)}
+
   private
   def downcase_email
     email.downcase!

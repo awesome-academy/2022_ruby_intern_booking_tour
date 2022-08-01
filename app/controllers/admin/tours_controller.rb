@@ -1,4 +1,5 @@
 class Admin::ToursController < ApplicationController
+  layout "layouts/application_admin"
   before_action :logged_in_user
   before_action :check_admin
   before_action :load_tour, except: %i(create new index)
@@ -23,7 +24,7 @@ class Admin::ToursController < ApplicationController
   end
 
   def show
-    @pagy, @reviews = pagy(@tour.reviews.recent_reviews,
+    @pagy, @reviews = pagy(@tour.reviews.most_recent,
                            items: Settings.review.admin_per_page)
   end
 
@@ -31,32 +32,41 @@ class Admin::ToursController < ApplicationController
 
   def update
     if @tour.update tour_params
-      flash[:success] = t ".update_success"
-      redirect_to admin_tours_path
+      success_format t ".update_success"
     else
-      flash.now[:danger] = t ".update_failed"
-      render :edit
+      danger_format t ".update_failed"
     end
   end
 
   def destroy
+    total = Tour.all.count
+    index = Tour.all.find_index(@tour)
     if @tour.destroy
-      flash[:success] = t ".destroy_success"
+      cur_page = handle_page total, index
+      @pagy, @tours = pagy(Tour.recent_tours,
+                           items: Settings.tour.per_page_admin, page: cur_page)
+      success_format t ".destroy_success"
     else
-      flash[:danger] = t ".destroy_danger"
+      danger_format t ".destroy_danger"
     end
-    redirect_to admin_tours_path
   end
 
-  def filter; end
-
   private
+
+  def handle_page total, index
+    cur_page = (((total - index) - 1) / Settings.tour.per_page_admin).ceil + 1
+
+    tours = Tour.limit(Settings.tour.per_page_admin).offset(
+      Settings.tour.per_page_admin * (cur_page - 1)
+    )
+    cur_page -= 1 if tours.empty?
+    cur_page
+  end
 
   def load_tour
     @tour = Tour.find_by id: params[:id]
     return if @tour
 
-    flash[:danger] = t ".show_tour_failed"
     redirect_to admin_tours_path
   end
 

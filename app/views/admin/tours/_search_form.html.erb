@@ -1,0 +1,125 @@
+<div class="search_admin_form">
+  <div class="container-fluid mx-auto">
+    <div class="row d-flex w-100 ">
+      <div class="col-12">
+        <div class="card border-0">
+          <%= form_tag admin_filter_tours_path ,method: :get, remote: true do %>
+            <div class="card-body px-3 px-md-5">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <%= text_field_tag :name_like, nil, placeholder: "Your tour's name" %>
+                </div>
+              </div>
+              <div class="card mb-3">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card-header">
+                      <h6><span class="fa fa-calendar mr-3"></span>Arriving Date</h6>
+                    </div>
+                    <div class="card-body">
+                      <div class="row px-4">
+                        <div class="col-6 col-lg-3 text-center px-0 arrival active">
+                          <div class="block py-1">Specific</div>
+                        </div>
+                        <div class="col-6 col-lg-3 text-center px-0 arrival">
+                          <div class="block py-1">After</div>
+                        </div>
+                        <div class="col-6 col-lg-3 text-center px-0 arrival">
+                          <div class="block py-1">Before</div>
+                        </div>
+                        <div class="col-6 col-lg-3 text-center px-0 arrival">
+                          <div class="block py-1">Between</div>
+                        </div>
+                      </div>
+                      <div class="row px-4 mt-3">
+                        <div class="col-md-6 pl-0 pr-0 pr-md-2 mb-2">
+                          <%= date_field_tag :start_date %>
+                        </div>
+                        <div class="col-md-6 pl-0 pl-md-2 pr-0">
+                          <%= date_field_tag :end_date %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-header">
+                      <h6><span class="fa fa-star icon-star mr-3"></span>Choose hotel star</h6>
+                    </div>
+                    <div class="card-body">
+                      <div class="row px-4 mb-2">
+                        <div class="col-4 text-center px-0 hotel active">
+                          <div class="block py-1">Equals</div>
+                        </div>
+                        <div class="col-4 text-center px-0 hotel">
+                          <div class="block py-1">Less than</div>
+                        </div>
+                        <div class="col-4 text-center px-0 hotel">
+                          <div class="block py-1">More than</div>
+                        </div>
+                      </div>
+                      <div class="row px-4">
+                        <div class="form-group star">
+                          <% Settings.tour.rating_max.times do |n| %>
+                            <div class="form-star">
+                              <%= check_box_tag 'avg_ratings[]',n + 1, nil, :id => "admin_tour_star_#{n + 1}"  %>
+                              <i class="iconify icon-star-empty"
+                                  data-icon="icomoon-free:star-empty" id="icon_tour_star_<%= n + 1 %>"></i>
+                            </div>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-header">
+                      <h6><span class="fa fa-star icon-star mr-3"></span>Choose price</h6>
+                    </div>
+                    <div class="card-body">
+                      <div class="row px-4 mb-2">
+                        <div class="col-4 text-center px-0 hotel active">
+                          <div class="block py-1">Equals</div>
+                        </div>
+                        <div class="col-4 text-center px-0 hotel">
+                          <div class="block py-1">Less than</div>
+                        </div>
+                        <div class="col-4 text-center px-0 hotel">
+                          <div class="block py-1">More than</div>
+                        </div>
+                      </div>
+                      <div class="row px-4">
+                        <div class="col-md-6 pl-0 pr-0 pr-md-2 mb-2">
+                          <%= text_field_tag :start_price, nil, placeholder: "Your tour's start price" %>
+                        </div>
+                        <div class="col-md-6 pl-0 pl-md-2 pr-0">
+                          <%= text_field_tag :end_price, nil, placeholder: "Your tour's end price" %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-header">
+                      <h6><span class="fa fa-star icon-star mr-3"></span><%= t ".sort" %></h6>
+                    </div>
+                    <div class="card-body">
+                      <div class="row px-4">
+                        <%= select_tag(:order_tours_admin, options_for_select([[t(".name_asc"),1],[t(".name_desc"),2],[t(".price_asc"),3],[t(".price_desc"),4]]), class:"form-control") %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row px-3">
+                <p id="green" class="mr-2"><span class="mr-2 fa fa-plus"></span><%= t ".and" %></p>
+                <p id="blue"><span class="mr-2 fa fa-reorder"></span><%= t ".or" %></p>
+              </div>
+            </div>
+            <div class="card-footer bg-white row mx-0 mb-2 justify-content-between">
+              <button class="btn btn-secondary px-4"><%= t ".cancel" %></button>
+              <button type="submit" class="btn btn-success ml-auto"><span class="iconify" data-icon="akar-icons:search"></span> &nbsp;&nbsp;<%= t ".filter" %></button>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

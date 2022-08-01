@@ -40,6 +40,40 @@ $(document).ready(function () {
     });
   });
 
+  for (let i = 1; i <= 5; i++) {
+    let index = i;
+    $("#admin_tour_star_" + i).on("click", function () {
+      if ($("#admin_tour_star_" + index).is(":checked")) {
+        let first = 1;
+        let last = 5;
+        while (first <= index) {
+          $("#icon_tour_star_" + first)
+            .removeClass("icon-star-empty")
+            .addClass("icon-star-full")
+            .attr("data-icon", "icomoon-free:star-full");
+          $("#admin_tour_star_" + first).prop("checked", false);
+          first++;
+        }
+
+        while (index < last) {
+          $("#icon_tour_star_" + last)
+            .removeClass("icon-star-full")
+            .addClass("icon-star-empty")
+            .attr("data-icon", "icomoon-free:star-empty");
+          $("#admin_tour_star_" + last).prop("checked", false);
+          last--;
+        }
+        $("#admin_tour_star_" + index).prop("checked", true);
+      } else {
+        $("#icon_tour_star_" + index)
+          .removeClass("icon-star-full")
+          .addClass("icon-star-empty")
+          .attr("data-icon", "icomoon-free:star-empty");
+        $("#admin_tour_star_" + (index - 1)).prop("checked", true);
+      }
+    });
+  }
+
   $(function () {
     $('[data-toggle="tooltip"]').tooltip();
     $(".side-nav .collapse").on("hide.bs.collapse",function () {

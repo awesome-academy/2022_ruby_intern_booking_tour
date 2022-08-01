@@ -1,4 +1,4 @@
-.navbar_admin {
+.admin {
   .navbar {
     #wrapper {
       padding-left: 0;
@@ -133,6 +133,44 @@
 
     .navbar-brand {
       padding: 5px 15px;
+    }
+  }
+}
+
+.sidebar-wrap {
+  color: #fff !important;
+
+  .form-group.star {
+    display: flex;
+  }
+
+  .form-star {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+  }
+
+  input[name="avg_ratings[]"] {
+    height: 2.5rem;
+    width: 2.5rem;
+    position: absolute;
+    z-index: 99;
+    opacity: 0;
+  }
+}
+
+.search_name {
+  .flex-container {
+    display: flex;
+    width: 40%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0px;
+
+    button {
+      background-color: rgba(0, 0, 0, 0.1);
+      border: none;
+      height: 50px;
     }
   }
 }

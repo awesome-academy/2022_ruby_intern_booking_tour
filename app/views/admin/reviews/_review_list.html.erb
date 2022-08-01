@@ -2,8 +2,12 @@
   <div class="col-sm-12">
     <hr>
     <div class="review-block">
-      <%= render @reviews %>
-      <%== pagy_bootstrap_nav @pagy %>
+      <div id="list_reviews">
+        <%= render @reviews %>
+      </div>
+      <div id="list_reviews_pagy">
+        <%== pagy_bootstrap_nav @pagy %>
+      </div>
       <hr>
     </div>
   </div>

@@ -7,20 +7,13 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous">
   </head>
   <body>
     <%= render "layouts/flash_messages", flash: flash %>
-    <% if current_user&.admin? %>
-      <%= render "layouts/header_admin" %>
-    <% else %>
-      <%= render "layouts/header" %>
-    <% end %>
-    <% if !current_user || current_user&.user? %>
-      <%= yield %>
-      <%= render "layouts/popup_messages" %>
-    <% end %>
-    <% if !current_user || current_user&.user? %>
-      <%= render "layouts/footer" %>
-    <% end %>
+    <%= render "layouts/header" %>
+    <%= yield %>
+    <%= render "layouts/popup_messages" %>
+    <%= render "layouts/footer" %>
   </body>
 </html>
