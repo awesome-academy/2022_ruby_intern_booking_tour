@@ -239,3 +239,16 @@ en:
       review: "review"
     create:
       review_success: "review success"
+
+  tour_request_mailer:
+    auth_tour_request:
+      subject: Tour request details
+      userName: User's Name
+      userEmail: User's email
+      startDate: Start Date
+      endDate: End Date
+      details: Details
+      title: Confirm
+      content: Please confirm your info
+      hi: Hi
+      night: /Night

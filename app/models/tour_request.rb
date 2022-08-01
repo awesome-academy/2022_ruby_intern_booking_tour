@@ -3,6 +3,7 @@ class TourRequest < ApplicationRecord
   after_create :subtract_stock
   around_update :modify_stock
   after_destroy :add_stock
+  after_update :send_tour_request_email
 
   belongs_to :user
   belongs_to :tour
@@ -30,6 +31,10 @@ class TourRequest < ApplicationRecord
   def next
     TourRequest.where("created_at > ?",
                       created_at).most_recent.first
+  end
+
+  def send_tour_request_email
+    TourRequestMailer.auth_tour_request(self).deliver_now
   end
 
   private

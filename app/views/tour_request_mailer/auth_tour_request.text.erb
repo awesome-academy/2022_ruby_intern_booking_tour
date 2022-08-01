@@ -1,0 +1,15 @@
+<%= t ".title" %>
+<%= t ".hi" %> <%= @tour_request.user_name %>
+<%= t ".content" %>
+<%= @tour_request.tour_price %></span><small> <%= t ".night" %>
+  <%= @tour_request.tour_name %>
+  <%= @tour_request.tour.category_name %>
+  <%= @tour_request.tour_description %>
+  <%= t ".userName" %>
+  <%= text_field :name, "",  value: @tour_request.user_name, disabled: true %>
+  <%= t ".userEmail" %>
+  <%= text_field :email, "",  value: @tour_request.user_email, disabled: true %>
+  <%= t ".startDate" %>
+  <%= date_field :startDate, "",  value: @tour_request.tour_start_date.strftime("%F"), disabled: true %>
+  <%= t ".endDate" %>
+  <%= date_field :endDate, "", value: @tour_request.tour_end_date.strftime("%F"), disabled: true %>

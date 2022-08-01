@@ -235,3 +235,16 @@ vi:
       review: "Đánh giá"
     create:
       review_success: "đánh giá thành công"
+
+  tour_request_mailer:
+    auth_tour_request:
+      subject: Thông tin chi tiết tour request
+      userName: Tên
+      userEmail: Email
+      startDate: Ngày bắt đầu
+      endDate: Ngày kết thúc
+      details: Xem thông tin chi tiết!
+      title: Xác nhận
+      content: Vui lòng kiểm tra lại thông tin
+      hi: Xin chào
+      night: /Đêm
