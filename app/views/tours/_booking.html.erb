@@ -1,0 +1,26 @@
+<%= form_for current_user.tour_requests.build do |f| %>
+  <%= hidden_field_tag :tour_id, @tour.id %>
+  <div class="col-md-3">
+    <div class="form-group">
+      <div class="form-field">
+        <span> <%= t ".quantity" %> </span>
+        <%= f.text_field :quantity, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <div class="form-field">
+        <span> <%= t ".total_price" %> </span>
+        <%= f.text_field :total_price, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <div class="form-field">
+        <%= f.submit t(".submit"), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,77 @@
+<div class="colorlib-loader"></div>
+<div id="page">
+  <aside id="colorlib-hero">
+    <div class="flexslider">
+      <ul class="slides">
+        <li class="tourshow_background">
+          <div class="overlay"></div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                <div class="slider-text-inner text-center">
+                  <h1><%= t ".find_Tours" %></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </aside>
+  <div class="colorlib-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="wrap-division">
+                <div class="col-md-12 col-md-offset-0 heading2 animate-box">
+                  <h2><%= @tour.name %></h2>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 animate-box">
+                    <div class="room-wrap">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <div class="room-img">
+                            <%= image_tag @tour.image %>
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                          <div class="desc">
+                            <p class="star"><span>  <%= sanitize render_star(@tour.avg_rating), attributes: %w(class data-icon) %> </span></p>
+                            <h2><%= @tour.description %></h2>
+                            <p class="price"><span><%= @tour.price %></span><span>$</span><small> / <%= pluralize((@tour.end_date.to_date - @tour.start_date.to_date).to_i, "day") %></small></p>
+                            <div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <div class="form-field">
+                                  <span> <%= t ".start_date" %> </span>
+                                  <%= date_field :start_date, "", class: "form-control", value: @tour.start_date.strftime("%F"), disabled: true %>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <div class="form-field">
+                                  <span> <%= t ".end_date" %> </span>
+                                  <%= date_field :end_date, "", class: "form-control", value: @tour.end_date.strftime("%F"), disabled: true %>
+                                </div>
+                              </div>
+                            </div>
+                            <%= render "booking" if current_user %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

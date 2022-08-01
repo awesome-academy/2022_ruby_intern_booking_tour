@@ -40,7 +40,7 @@
           <div class="sidebar-wrap">
             <div class="side search-wrap animate-box">
               <h3 class="sidebar-heading"><%= t ".find_your_tour" %></h3>
-              <%= form_tag(tour_path, method: :get, class: "colorlib-form") do %>
+              <%= form_tag(tours_path, method: :get, class: "colorlib-form") do %>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
@@ -109,7 +109,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <h3 class="sidebar-heading"><%= t ".review_Rating" %></h3>
-                  <%= form_tag(tour_path, method: :get, class: "colorlib-form-2") do %>
+                  <%= form_tag(tours_path, method: :get, class: "colorlib-form-2") do %>
                     <% temp = 5 %>
                     <% while temp > 0 %>
                       <div class="form-check">
