@@ -1,0 +1,13 @@
+<div class="col-md-6 col-sm-6 animate-box">
+  <div class="tour">
+    <%= link_to tour, class:"tour-img" do %>
+      <%= image_tag tour.image %>
+      <p class="price"><span>$ <%= tour.price %> </span> <small>/<%= pluralize((tour.end_date.to_date - tour.start_date.to_date).to_i, t(".day")) %></small></p>
+    <% end %>
+    <span class="desc">
+      <p class="star"><span>  <%= sanitize render_star(tour.avg_rating), attributes: %w(class data-icon) %> </span></p>
+      <h2><%= link_to tour.name, tour %></h2>
+      <span class="city"><%= tour.description %></span>
+    </span>
+  </div>
+</div>

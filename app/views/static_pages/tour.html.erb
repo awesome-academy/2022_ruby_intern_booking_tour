@@ -1,0 +1,131 @@
+<div class="colorlib-loader"></div>
+<div id="page">
+  <aside id="colorlib-hero">
+    <div class="flexslider">
+      <ul class="slides">
+        <li class= "tour_background">
+          <div class="overlay"></div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                <div class="slider-text-inner text-center">
+                  <h1><%= t ".find_Tours" %></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </aside>
+  <div class="colorlib-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="wrap-division">
+              <% if @tours.any? %>
+                <%= render @tours %>
+              <% end %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <%== pagy_bootstrap_nav(@pagy) %>
+            </div>
+          </div>
+        </div>
+        <!-- SIDEBAR-->
+        <div class="col-md-3">
+          <div class="sidebar-wrap">
+            <div class="side search-wrap animate-box">
+              <h3 class="sidebar-heading"><%= t ".find_your_tour" %></h3>
+              <%= form_tag(tour_path, method: :get, class: "colorlib-form") do %>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <%= label_tag :name, t(".name") %>
+                      <div class="form-field">
+                        <%= text_field_tag :name, "", class: "form-control", placeholder: t(".search_tour") %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <%= label_tag :start_date, t(".start_date") %>
+                      <div class="form-field">
+                        <%= date_field_tag :start_date, "", class: "form-control" %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <%= label_tag :end_date, t(".end_date") %>
+                      <div class="form-field">
+                        <%= date_field_tag :end_date, "", class: "form-control" %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <%= submit_tag t(".find_Tours"), class: "btn btn-primary btn-block" %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <div class="side animate-box">
+              <div class="row">
+                <div class="col-md-12">
+                  <h3 class="sidebar-heading"><%= t ".price_Range" %></h3>
+                  <form method="post" class="colorlib-form-2">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="guests"><%= t ".price_from" %></label>
+                          <div class="form-field">
+                            <i class="icon icon-arrow-down3"></i>
+                            <select name="people" id="people" class="form-control">
+                              <option value="#">1</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="guests"><%= t ".price_to" %></label>
+                          <div class="form-field">
+                            <i class="icon icon-arrow-down3"></i>
+                            <select name="people" id="people" class="form-control">
+                              <option value="#">2000</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="side animate-box">
+              <div class="row">
+                <div class="col-md-12">
+                  <h3 class="sidebar-heading"><%= t ".review_Rating" %></h3>
+                  <%= form_tag(tour_path, method: :get, class: "colorlib-form-2") do %>
+                    <% temp = 5 %>
+                    <% while temp > 0 %>
+                      <div class="form-check">
+                        <%= check_box_tag :rating_filter, class: "form-check-input" %>
+                        <%= label_tag :rating_filter, "" do %>
+                          <p class="rate"><span> <%= sanitize render_star(temp), attributes: %w(class data-icon) %> </span></p>
+                        <% end %>
+                      </div>
+                      <% temp -= 1 %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

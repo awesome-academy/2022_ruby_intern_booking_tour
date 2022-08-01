@@ -26,6 +26,10 @@ gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 
+group :development, :test do
+  gem "pry-rails", platforms: %i(mri mingw x64_mingw)
+end
+
 group :development do
   gem "faker", "2.1.2"
   gem "listen", "~> 3.3"

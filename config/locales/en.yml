@@ -82,3 +82,14 @@ en:
     load_user:
       load_success: Load user success
       load_failed: Load user failed
+    tour:
+      find_Tours: "Find Tours"
+      find_your_tour: "find your tour"
+      price_Range: "Price Range"
+      price_from: "Price from:"
+      price_to: "Price to:"
+      review_Rating: "Review Rating"
+      search_tours: "search tours"
+  tours:
+    tour:
+      day: "Day"
