@@ -26,14 +26,13 @@ gem "webpacker", "~> 5.0"
 
 group :development, :test do
   gem "byebug", platforms: %i(mri mingw x64_mingw)
-  gem "rspec-rails", "~> 4.0.1"
 end
 
 group :development do
-  gem "web-console", ">= 4.1.0"
   gem "listen", "~> 3.3"
   gem "rack-mini-profiler", "~> 2.0"
   gem "spring"
+  gem "web-console", ">= 4.1.0"
 end
 
 group :test do
@@ -45,6 +44,7 @@ end
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
 
 group :development, :test do
+  gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.14.0", require: false
