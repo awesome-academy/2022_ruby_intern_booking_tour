@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :tour_requests, dependent: :destroy
 
+  UPDATABLE_ATTRS = %i(name email password password_confirmation).freeze
+
   validates :name, presence: true, length: {maximum: Settings.user.name_max}
   validates :email, presence: true, length: {maximum: Settings.user.email_max},
                     format: {with: Settings.user.email_regex},

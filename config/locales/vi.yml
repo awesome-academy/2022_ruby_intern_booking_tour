@@ -1,0 +1,47 @@
+vi:
+  sessions:
+    new:
+      login: "đăng nhập"
+  layouts:
+    header:
+      log_out: "Đăng xuất"
+      home: " Trang Chủ"
+      tours: " các chuyến du lịch"
+      profile: " Hồ sơ"
+      login: " Đăng nhập"
+    footer:
+      tour_agency: "Đại lý du lịch"
+      book_now: " đặt bây giờ"
+      top_deals: " giao dịch hàng đầu"
+      blog_post: " bài viết trên blog"
+      contact_information: " thông tin liên lạc"
+  static_pages:
+    home:
+      amazing_maldivest_tour: "chuyến tham quan tuyệt vời"
+      from_greece_to_spain: " từ Hy Lạp đến Tây Ban Nha"
+      explore_our_most_travel_agency: " khám phá đại lý du lịch nhất của chúng tôi"
+      our_travel_agency: " công ty du lịch của chúng tôi"
+      experience_the: " trải nghiệm"
+      best_trip_ever: " chuyến đi vui nhất"
+      search_tours: " tìm kiếm các chuyến tham quan"
+      tour_name: " tên tour"
+      search_Location: " tìm kiếm Vị trí"
+      category: " thể loại"
+      start_date: " ngày bắt đầu"
+      check-in_date: " ngày nhận phòng"
+      end_date: " ngày cuối"
+      check-out_date: " ngày trả phòng"
+      amazing_travel: " chuyến du lịch tuyệt vời"
+      our_cruises: "chuyến du lịch của chúng tôi"
+      book_your_trip: " đặt chuyến đi của bạn"
+      nice_support: " hỗ trợ tốt"
+      travel_description: " tách biệt họ sống trong Bookmarksgrove ngay tại bờ biển của Semantics, một đại dương ngôn ngữ rộng lớn. Một con sông nhỏ có tên Duden chảy qua nơi ở và nguồn cung cấp của họ"
+      popular_destination: " điểm đến phổ biến"
+      talk_destination: " chúng tôi thích kể về thành công của chúng tôi ở rất xa, đằng sau những ngọn núi chữ, xa các quốc gia Vokalia và Consonantia, có những văn bản mù mịt"
+      guests_says: " Những vị khách hài lòng của chúng tôi nói"
+      alysha_Myers: " Alysha Myers"
+      miami_Florida,_USA: " Miami Florida, Hoa Kỳ"
+      guests_comments: " một con sông nhỏ có tên Duden chảy qua nơi họ ở và cung cấp cho nó những chất dinh dưỡng cần thiết"
+      sign_Up_Now: " Đăng ký ngay"
+      singup_description: " Đăng ký để có được các tính năng đầy đủ của trang web của chúng tôi"
+      signup: " Đăng ký"
