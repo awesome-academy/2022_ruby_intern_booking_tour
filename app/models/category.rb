@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
   has_many :tours, dependent: :destroy
 
-  validates :category_name, presence: true
+  validates :name, presence: true
 end

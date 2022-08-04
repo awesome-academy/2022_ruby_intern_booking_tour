@@ -82,3 +82,14 @@ vi:
     load_user:
       load_success: Hiện thị user thành công
       load_failed: Hiển thị user thất bại
+    tour:
+      find_Tours: "Tìm chuyến tham quan"
+      find_your_tour: " tìm chuyến tham quan của bạn"
+      price_Range: " Phạm vi giá"
+      price_from: " Giá từ:"
+      price_to: " Giá thành:"
+      review_Rating: " Đánh giá xếp hạng"
+      search_tour: " tìm kiếm các chuyến tham quan"
+  tours:
+    tour:
+      day: " Ngày"

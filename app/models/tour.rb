@@ -5,14 +5,12 @@ class Tour < ApplicationRecord
 
   has_one_attached :image
 
-  validates :tour_name, presence: true,
+  validates :name, presence: true,
                         length: {maximum: Settings.tour.name_max}
-  validates :tour_description, presence: true,
+  validates :description, presence: true,
                                length: {maximum: Settings.tour.description_max}
   validates :price, presence: true
-  validates :avg_rating, presence: true,
-                         length: {maximum: Settings.tour.rating_max,
-                                  minimum: Settings.tour.rating_max}
+  validates :avg_rating, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :image, content_type: {in: Settings.tour.image_type,
@@ -21,4 +19,7 @@ class Tour < ApplicationRecord
                       less_than: Settings.tour.image_size.megabytes,
                       message: :size_img
                     }
+
+  scope :incre_order, ->{order(id: :asc)}
+  scope :order_rating, ->(rating){where("avg_rating = ?", rating)}
 end

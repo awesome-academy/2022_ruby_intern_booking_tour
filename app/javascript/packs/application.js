@@ -15,6 +15,7 @@ import "../animation/jquery.easing.1.3"
 import "../animation/jquery.flexslider-min"
 import "../animation/jquery.min"
 import "../animation/jquery.waypoints.min"
+import "../animation/iconify.min"
 import "../animation/main"
 
 Rails.start();
