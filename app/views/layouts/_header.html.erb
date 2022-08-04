@@ -1,3 +1,36 @@
+<% if current_user && current_user.role == 0  %>
+  <div class="navbar_admin">
+  <div class="navbar navbar-default navbar-static-top">
+    <div class="container bootstrap snippets bootdey">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to t(".admin"), users_path, class: "navbar-brand" %>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active">
+              <%= link_to t(".home"), users_path %>
+          </li>
+          <li class="dropdown "><a href="#" id="drop1" data-toggle="dropdown" class="dropdown-toggle" role="button"><%= t(".manage") %> <b class="caret"></b></a>
+              <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
+                  <li role="presentation"> <%= link_to t(".users"), users_path %></li>
+                  <li role="presentation"> <%= link_to t(".tours"), "#" %></li>
+                  <li role="presentation"> <%= link_to t(".previews"), "#" %></li>
+                  <li role="presentation"> <%= link_to t(".requests"), "#" %></li>
+              </ul>
+          </li>
+          <li><%= link_to t(".log_out"), logout_path, method: :delete %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% else %>
 <nav class="colorlib-nav" role="navigation">
   <div class="top-menu">
     <div class="container-fluid">
@@ -28,3 +61,5 @@
     </div>
   </div>
 </nav>
+
+<% end %>

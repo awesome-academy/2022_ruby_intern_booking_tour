@@ -9,6 +9,8 @@ en:
       sign_Up_Now: "Sign Up Now"
       singup_description: "Sign up to get the full features of our site"
       signup: "Sign up"
+    login_success: "Đăng nhập thành công"
+    login_failed: "Đăng nhập thất bại"
   layouts:
     header:
       log_out: "Log out"
@@ -16,6 +18,8 @@ en:
       tours: "tours"
       profile: "profile"
       login: "Log in"
+      requests: "Request"
+      previews: "Previews"
     footer:
       tour_agency: "Tour agency"
       book_now: "book now"
@@ -52,3 +56,29 @@ en:
       sign_Up_Now: "Sign Up Now"
       singup_description: "Sign up to get the full features of our site"
       signup: "Sign up"
+  users:
+    show:
+      show_user_failed: "Show user failed!"
+      show_user_success: "Show users successfully!"
+    update:
+      update_success: "Update successfully!"
+      update_failed: "Update failed!"
+    destroy:
+      destroy_success: "Destroy successfully!"
+      destroy_failed: "Destroy failed!"
+    form:
+      email: "Email"
+      password: "Password"
+      password_confirm: "Password Confirm"
+      name: "Name"
+    edit:
+      button_text: "Edit"
+    check_admin:
+      permission: "You dont have permission!"
+    index:
+      name: "Your name"
+      status: "Status"
+      action: "Action"
+    load_user:
+      load_success: Load user success
+      load_failed: Load user failed

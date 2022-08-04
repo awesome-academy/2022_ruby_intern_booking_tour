@@ -1,11 +1,18 @@
-# Generate a bunch of additional users.
-20.times do |n|
-  name = "Example #{n+1}"
-  email = "example-#{n+1}@railstutorial.org"
-  password = "123456"
-  User.create!(name: name,
-  email: email,
-  password: password,
-  password_confirmation: password,
+User.destroy_all
+User.create!(name: "Example User",
+  email: "example@railstutorial.org",
+  password: "foobar",
+  password_confirmation: "foobar",
+  role: 0
 )
-end
+
+99.times do |n|
+  name = "khoa-#{n+1}"
+  email = "example-#{n+1}@railstutorial.org"
+  password = "password"
+  User.create!(name: name,
+    email: email,
+    password: password,
+    password_confirmation: password,
+  )
+  end

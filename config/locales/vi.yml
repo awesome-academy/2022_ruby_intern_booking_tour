@@ -9,6 +9,8 @@ vi:
       sign_Up_Now: " Đăng ký ngay"
       singup_description: " Đăng ký để có được các tính năng đầy đủ của trang web của chúng tôi"
       signup: " Đăng ký"
+    login_success: "Đăng nhập thành công"
+    login_failed: "Đăng nhập thất bại"
   layouts:
     header:
       log_out: "Đăng xuất"
@@ -16,6 +18,8 @@ vi:
       tours: " các chuyến du lịch"
       profile: " Hồ sơ"
       login: " Đăng nhập"
+      requests: "Yêu cầu"
+      previews: "Previews"
     footer:
       tour_agency: "Đại lý du lịch"
       book_now: " đặt bây giờ"
@@ -52,3 +56,29 @@ vi:
       sign_Up_Now: " Đăng ký ngay"
       singup_description: " Đăng ký để có được các tính năng đầy đủ của trang web của chúng tôi"
       signup: " Đăng ký"
+  users:
+    show:
+      show_user_failed: "Hiển thị danh sách user thất bại!"
+      show_user_success: "Hiển thị danh sách user thành công!"
+    update:
+      update_success: "Cập nhật thành công!"
+      update_failed: "Cập nhật thất bại!"
+    destroy:
+      destroy_success: "Xóa thành công!"
+      destroy_failed: "Xóa thất bại!"
+    form:
+      email: "Email"
+      password: "Mật khẩu"
+      password_confirm: "Xác thực mật khẩu"
+      name: "Tên"
+    edit:
+      button_text: "Chỉnh sửa"
+    check_admin:
+      permission: "Bạn không có quyền thao tác!"
+    index:
+      name: "Your name"
+      status: "Status"
+      action: "Action"
+    load_user:
+      load_success: Hiện thị user thành công
+      load_failed: Hiển thị user thất bại
