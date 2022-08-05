@@ -75,3 +75,4 @@ config/application.yml
 .framgia-ci-result.temp.yml
 /log/
 /storage/
+/db/seeds.rb

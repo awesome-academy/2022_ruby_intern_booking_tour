@@ -13,6 +13,7 @@ import "../animation/jquery.waypoints.min"
 import "../animation/iconify.min"
 import "../animation/main"
 import "../custom/custom"
+import "bootstrap"
 import "../pagy/pagy.js.erb"
 global.toastr = require("toastr")
 

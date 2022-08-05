@@ -1,11 +1,13 @@
 <div class="col-sm-12">
   <hr>
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-3 padding-left">
       <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-      <div class="review-block-name"><a href="#"><%= @review %></a></div>
-      <div class="review-block-date"><%= %><br>
-        <%= review.created_at %> </div>
+      <div class="review-block-name"><%= link_to review.user.name, '#' %></div>
+      <div class="review-block-date">
+        <%= review.created_at.to_date %>
+        <br>
+      </div>
     </div>
     <div class="col-sm-9">
       <div class="review-block-rate">
