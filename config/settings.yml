@@ -15,7 +15,7 @@ tour:
   image_type: ["image/jpeg", "image/gif", "image/png"]
   image_size: 5
   image_resize: [500, 500]
-  tour_per_page: 30
+  tour_per_page: 10
   default_quantity: 1
   per_page_admin: 4
   height_limit: 500

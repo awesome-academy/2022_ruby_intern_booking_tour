@@ -90,8 +90,17 @@ global.eventRatingOnLoad = function eventRating() {
   observer.observe($('.star-rating-form')[0],{ attributes: true,childList: true,subtree: true });
 };
 
+global.eventReview = function eventReview() {
+  for (let i = 0; i < 6; i++) {
+    $(`#rating_filter_${i}`).on("change",() => {
+      Rails.fire($('#rating_filter_form')[0],'submit');
+    })
+  };
+}
+
 $(document).on('turbolinks:load',function () {
   eventQuantity();
+  eventReview();
   eventRatingOnLoad();
   $(document).ready(function () {
     eventRating();

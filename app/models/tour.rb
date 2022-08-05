@@ -1,6 +1,6 @@
 class Tour < ApplicationRecord
   UPDATABLE_ATTRS = %i(name description price image start_date end_date
-avg_rating category_id).freeze
+                       avg_rating category_id).freeze
 
   has_many :tour_requests, dependent: :destroy
   has_many :discounts, dependent: :destroy
@@ -11,9 +11,6 @@ avg_rating category_id).freeze
   has_one_attached :image
 
   delegate :name, to: :category, prefix: true
-
-  UPDATABLE_ATTRS = %i(name description price image start_date end_date
-                        avg_rating category_id).freeze
 
   validates :name, presence: true,
                         length: {maximum: Settings.tour.name_max}
@@ -47,6 +44,9 @@ avg_rating category_id).freeze
   scope :incre_order, ->{order(id: :asc)}
   scope :order_rating, ->(rating){where("avg_rating = ?", rating)}
   scope :recent_tours, ->{order(created_at: :desc)}
+  scope :by_rating_array, (lambda do |get_rating|
+    where(avg_rating: get_rating) if get_rating.present?
+  end)
 
   def display_image
     image.variant resize_to_limit:
