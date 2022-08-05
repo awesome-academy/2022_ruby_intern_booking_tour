@@ -44,9 +44,9 @@
         <!-- SIDEBAR-->
         <div class="col-md-3">
           <div class="sidebar-wrap">
-            <div class="side search-wrap animate-box">
-              <h3 class="sidebar-heading"><%= t ".find_your_tour" %></h3>
-              <%= form_tag(tours_path, method: :get, class: "colorlib-form", id: "search-form", remote: true) do %>
+            <%= form_tag(tours_path, method: :get, class: "colorlib-form", id: "search-form", remote: true) do %>
+              <div class="side search-wrap animate-box">
+                <h3 class="sidebar-heading"><%= t ".find_your_tour" %></h3>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
@@ -85,16 +85,17 @@
                       <div class="form-check">
                         <%= check_box_tag "rating_filter_#{Settings.tour.rating_max-i}", 1, checked: true %>
                         <%= label_tag "rating_filter_#{Settings.tour.rating_max-i}", "" do %>
-                          <p class="rate"><span> <%= sanitize render_star(Settings.tour.rating_max-i), attributes: %w(class data-icon) %> </span></p>
+                          <p class="rate rating-star"><span> <%= sanitize render_star(Settings.tour.rating_max-i), attributes: %w(class data-icon) %> </span></p>
                         <% end %>
                       </div>
                     <% end %>
-                  <% end %>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

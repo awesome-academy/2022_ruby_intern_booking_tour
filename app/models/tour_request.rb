@@ -1,9 +1,10 @@
 class TourRequest < ApplicationRecord
   enum status: {pending: 0, approved: 1, rejected: 2}
-  after_create :subtract_stock
+  after_create :subtract_stock, :send_tour_request_email, :broadcast_message
   around_update :modify_stock
-  after_destroy :add_stock
   after_update :send_tour_request_email
+  before_destroy :check_status
+  after_destroy :add_stock
 
   belongs_to :user
   belongs_to :tour
@@ -15,6 +16,7 @@ class TourRequest < ApplicationRecord
   UPDATABLE_ATTRS = %i(user_id tour_id quantity total_price).freeze
 
   validate :check_valid_date
+  validate :check_status, on: :update
   validates :status, presence: true
   validates :quantity, :total_price, presence: true,
                                      numericality: {
@@ -26,16 +28,16 @@ class TourRequest < ApplicationRecord
   scope :lastest, ->{order(created_at: :desc)}
 
   def position
-    TourRequest.most_recent.index(self) + 1
+    user.tour_requests.most_recent.index(self) + 1
   end
 
   def next
-    TourRequest.where("created_at > ?",
-                      created_at).most_recent.first
+    user.tour_requests.where("created_at > ?",
+                             created_at).most_recent.first
   end
 
   def send_tour_request_email
-    TourRequestMailer.auth_tour_request(self).deliver_now
+    TourRequestMailer.auth_tour_request(self).deliver_later
   end
 
   private
@@ -58,5 +60,20 @@ class TourRequest < ApplicationRecord
     return true if Time.zone.now.to_date.to_s < tour.start_date
 
     errors.add(:tour, :invalid_date)
+  end
+
+  def check_status
+    return true if pending?
+
+    errors.add(:tour_request, :invalid_status)
+    throw(:abort)
+  end
+
+  def broadcast_message
+    ActionCable.server.broadcast "notifications_channel",
+                                 {tour: tour,
+                                  user_name: user_name,
+                                  quantity: quantity,
+                                  user_id: user_id}
   end
 end

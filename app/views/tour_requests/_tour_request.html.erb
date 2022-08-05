@@ -3,7 +3,10 @@
     <div class="row">
       <div class="col-md-6 col-sm-6">
         <div class="room-img">
-          <%= image_tag tour_request.tour_image %>
+          <div class="list_tours_request">
+            <%= render "admin/tour_requests/badge_request", tour_request: tour_request %>
+            <%= image_tag tour_request.tour_image %>
+          </div>
         </div>
       </div>
       <div class="col-md-6 col-sm-6">

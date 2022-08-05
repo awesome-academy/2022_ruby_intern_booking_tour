@@ -61,6 +61,10 @@ $(document).ready(function () {
   });
 });
 
+global.getCookieValue = (name) => (
+  document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
+)
+
 global.eventQuantity = function eventQuantity() {
   $("[id=tour_request_quantity]").each(function () {
     $(this).on("change",() => {
@@ -70,7 +74,7 @@ global.eventQuantity = function eventQuantity() {
   })
 };
 
-global.eventRating = function eventRating() {
+global.eventRating = function () {
   $("svg.icon-star-empty-form").on("click",function () {
     let temp = $(this).attr("data-star");
     $("#review_rating").val(temp);
@@ -82,7 +86,7 @@ global.eventRating = function eventRating() {
   })
 };
 
-global.eventRatingOnLoad = function eventRating() {
+global.eventRatingOnLoad = function () {
   observer = new MutationObserver(() => {
     global.eventRating();
   });
@@ -91,12 +95,19 @@ global.eventRatingOnLoad = function eventRating() {
   }
 };
 
-global.eventReview = function eventReview() {
+global.eventReview = function () {
   for (let i = 0; i < 6; i++) {
     $(`#rating_filter_${i}`).on("change",() => {
       Rails.fire($('#search-form')[0],'submit');
     })
   };
+}
+
+global.popupMessages = function () {
+  $(".custom-social-proof").hide()
+  $(".custom-close").click(function () {
+    $(".custom-social-proof").stop().slideToggle('slow');
+  });
 }
 
 $(document).on('turbolinks:load',function () {

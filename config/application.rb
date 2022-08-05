@@ -14,6 +14,7 @@ module RubyInternBookingTour
     config.i18n.default_locale = :vi
     config.assets.paths << Rails.root.join("app", "assets", "flash")
     config.assets.enabled = true
+    config.action_view.embed_authenticity_token_in_remote_forms = true
     config.action_view.field_error_proc = Proc.new { |html_tag, instance|
       html_tag
     }

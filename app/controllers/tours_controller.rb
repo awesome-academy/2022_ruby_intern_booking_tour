@@ -34,8 +34,8 @@ class ToursController < ApplicationController
       @rating_filter[i] = rating if rating.present?
     end
 
-    @rating_filter.map!.with_index do |x, i|
-      i if x == "1"
+    @rating_filter.map!.with_index do |value, index|
+      index if value == "1"
     end
   end
 
