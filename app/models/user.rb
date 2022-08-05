@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  enum role: {admin: 0, user: 1}
+
   before_save :downcase_email
 
   has_many :reviews, dependent: :destroy

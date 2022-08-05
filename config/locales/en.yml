@@ -20,6 +20,8 @@ en:
       login: "Log in"
       requests: "Request"
       previews: "Previews"
+      english: "English"
+      vietnamese: "Vietnamese"
     footer:
       tour_agency: "Tour agency"
       book_now: "book now"
@@ -56,6 +58,17 @@ en:
       sign_Up_Now: "Sign Up Now"
       singup_description: "Sign up to get the full features of our site"
       signup: "Sign up"
+    tour:
+      find_Tours: "Find Tours"
+      start_date: "start date"
+      end_date: "end date"
+      find_your_tour: "find your tour"
+      name: "Name"
+      price_Range: "Price Range"
+      price_from: "Price from:"
+      price_to: "Price to:"
+      review_Rating: "Review Rating"
+      search_tours: "search tours"
   users:
     show:
       show_user_failed: "Show user failed!"
@@ -93,3 +106,11 @@ en:
   tours:
     tour:
       day: "Day"
+    show:
+      find_Tours: "Find Tours"
+      start_date: "start date"
+      end_date: "end date"
+    booking:
+      quantity: "quantity"
+      total_price: "total price"
+      submit: "submit"

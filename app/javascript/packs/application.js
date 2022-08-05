@@ -17,6 +17,7 @@ import "../animation/jquery.min"
 import "../animation/jquery.waypoints.min"
 import "../animation/iconify.min"
 import "../animation/main"
+import "../custom/custom"
 
 Rails.start();
 Turbolinks.start();

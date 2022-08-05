@@ -220,52 +220,6 @@
 
 	};
 
-	// // Owl Carousel
-	// var owlCrouselFeatureSlide = function() {
-	// 	var owl = $('.owl-carousel');
-	// 	owl.owlCarousel({
-	// 	   loop: true,
-	// 	   margin: 30,
-	// 	   nav: true,
-	// 	   dots: false,
-	// 	   autoplay: true,
-	// 	   autoplayHoverPause: true,
-	// 	   smartSpeed: 500,
-	// 	   responsive:{
-	// 	      0:{
-	// 	         items:1
-	// 	      },
-	//          600:{
-	// 	         items:2
-	// 	      },
-	// 	      1000:{
-	// 	         items:3
-	// 	      }
-	// 	   },
-	// 	   navText: [
-	// 	      "<i class='icon-chevron-left owl-direction'></i>",
-	// 	      "<i class='icon-chevron-right owl-direction'></i>"
-	//      	]
-	// 	});
-
-	// 	var owl2 = $('.owl-carousel2');
-	// 	owl2.owlCarousel({
-	// 		animateOut: 'fadeOut',
-	// 	   animateIn: 'fadeIn',
-	// 	   autoplay: true,
-	// 	   loop:true,
-	// 	   margin:0,
-	// 	   nav:true,
-	// 	   dots: false,
-	// 	   autoHeight: true,
-	// 	   items: 1,
-	// 	   navText: [
-	// 	      "<i class='icon-chevron-left owl-direction'></i>",
-	// 	      "<i class='icon-chevron-right owl-direction'></i>"
-	//      	]
-	// 	});
-	// };
-
 	var datePicker = function () {
 		// jQuery('#time').timepicker();
 		jQuery('.date').datepicker({
@@ -273,6 +227,7 @@
 			'autoclose': true
 		});
 	};
+
 
 
 	$(function () {
@@ -288,6 +243,7 @@
 		// parallax();
 		datePicker();
 	});
+
 	$(document).on('turbolinks:load',function () {
 		mobileMenuOutsideClick();
 		offcanvasMenu();
@@ -301,5 +257,4 @@
 		// parallax();
 		datePicker();
 	})
-
 }());
