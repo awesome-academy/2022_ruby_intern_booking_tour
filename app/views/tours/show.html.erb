@@ -70,6 +70,21 @@
               </div>
             </div>
           </div>
+          <div class="row">
+            <div class="row">
+              <div class="review-block">
+                <div id="container">
+                  <%= render @reviews %>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <hr>
+                <div id="pagy_container">
+                  <%== pagy_bootstrap_nav_js @pagy %>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ review:
   rating_min: 0
   rating_max: 5
   content_max: 120
+  review_per_page: 5
 
 tour:
   name_max: 120

@@ -2,9 +2,9 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user&.authenticate(params[:session][:password])
-      log_in
+    @user = User.find_by(email: params[:session][:email].downcase)
+    if @user&.authenticate(params[:session][:password])
+      log_in_user
     else
       flash.now[:danger] = t ".invalid"
       render :new
@@ -19,11 +19,11 @@ class SessionsController < ApplicationController
   end
 
   private
-  def log_in
-    log_in user
+  def log_in_user
+    log_in @user
     flash[:success] = t ".login_success"
-    redirect_back_or root_path if user.role == 1
+    redirect_back_or root_path if @user.user?
 
-    redirect_back_or users_path
+    redirect_back_or users_path if @user.admin?
   end
 end

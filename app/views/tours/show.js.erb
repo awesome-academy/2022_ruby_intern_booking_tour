@@ -1,0 +1,4 @@
+$('#container').html("<%= j render @reviews %>");
+$('#pagy_container').html('"<%== pagy_bootstrap_nav_js @pagy %>"');
+Pagy.init(document.getElementById('container'));
+Pagy.init(document.getElementById('pagy_container'));

@@ -1,6 +1,7 @@
 class Tour < ApplicationRecord
   has_many :tour_requests, dependent: :destroy
   has_many :discounts, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   belongs_to :category
 
   has_one_attached :image

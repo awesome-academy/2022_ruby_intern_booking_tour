@@ -228,8 +228,6 @@
 		});
 	};
 
-
-
 	$(function () {
 		mobileMenuOutsideClick();
 		offcanvasMenu();
