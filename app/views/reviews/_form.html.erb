@@ -1,0 +1,30 @@
+<div class="col-sm-12">
+  <hr>
+  <%= form_for current_user.reviews.build, remote: true do |f| %>
+    <%= f.hidden_field :tour_id, value: @tour.id %>
+    <div class="row">
+      <div class="col-sm-3 padding-left">
+        <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+        <div class="review-block-name"><%= link_to current_user.name, "#" %></div>
+      </div>
+      <%= f.hidden_field :rating, value: Settings.review.rating_min %>
+      <div class="col-sm-9">
+        <div class="col-sm-6">
+          <div class="review-block-rate block-rate-form">
+            <span class="star-rating-form"> <%= sanitize render_star_form, attributes: %w(class data-icon data-star) %> </span>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group text-center">
+            <%= f.submit t(".comment"), class: "btn btn-primary" %>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-md-12 padding-right">
+            <%= f.text_area :content, class: "form-control", placeholder: t(".your_review") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

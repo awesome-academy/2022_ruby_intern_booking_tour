@@ -61,26 +61,6 @@ $(document).ready(function () {
   });
 });
 
-$(
-  (function () {
-    var eventQuantity = function () {
-      $("#tour_request_quantity").on("change",() => {
-        $("#tour_request_total_price").val(
-          $(".price").children()[0].innerText *
-          $("#tour_request_quantity").val()
-        );
-      });
-    };
-
-    $(function () {
-      eventQuantity();
-    });
-
-    $(document).on("turbolinks:load",function () {
-      eventQuantity();
-    });
-  })()
-);
 global.eventQuantity = function eventQuantity() {
   $("[id=tour_request_quantity]").each(function () {
     $(this).on("change",() => {
@@ -90,6 +70,30 @@ global.eventQuantity = function eventQuantity() {
   })
 };
 
+global.eventRating = function eventRating() {
+  $("svg.icon-star-empty-form").on("click",function () {
+    let temp = $(this).attr("data-star");
+    $("#review_rating").val(temp);
+    $(this).removeClass('icon-star-empty-form');
+    $(this).addClass('icon-star-full-freeze')
+    $(this).siblings().removeClass('icon-star-empty-form');
+    $(this).nextAll().addClass('icon-star-full-freeze')
+    $(this).siblings().off('click');
+  })
+};
+
+observer = new MutationObserver(() => {
+  eventRating();
+});
+
+global.eventRatingOnLoad = function eventRating() {
+  observer.observe($('.star-rating-form')[0],{ attributes: true,childList: true,subtree: true });
+};
+
 $(document).on('turbolinks:load',function () {
   eventQuantity();
+  eventRatingOnLoad();
+  $(document).ready(function () {
+    eventRating();
+  })
 });

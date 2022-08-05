@@ -1,3 +1,5 @@
+@import 'color.scss';
+
 .login_background {
   background-image: url('cover-img-3.jpg');
 }
@@ -75,13 +77,41 @@
 }
 
 .icon-star-full {
-  color: #fd0;
+  color: $yellow;
+}
+
+.icon-star-full-freeze {
+  color: $yellow;
+  path {
+    d: path(
+      'm16 6.204l-5.528-.803L8 .392L5.528 5.401L0 6.204l4 3.899l-.944 5.505L8 13.009l4.944 2.599L12 10.103l4-3.899z'
+    );
+  }
+}
+
+.icon-star-empty-form:hover ~ .icon-star-empty-form {
+  color: $yellow;
+  path {
+    d: path(
+      'm16 6.204l-5.528-.803L8 .392L5.528 5.401L0 6.204l4 3.899l-.944 5.505L8 13.009l4.944 2.599L12 10.103l4-3.899z'
+    );
+  }
+}
+
+.icon-star-empty-form:hover {
+  color: $yellow;
+  path {
+    d: path(
+      'm16 6.204l-5.528-.803L8 .392L5.528 5.401L0 6.204l4 3.899l-.944 5.505L8 13.009l4.944 2.599L12 10.103l4-3.899z'
+    );
+  }
 }
 
 .stock {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 .tour__preview {
   width: 250px;
   height: 250px;
@@ -89,4 +119,22 @@
 
 .padding-left {
   padding-left: 80px;
+}
+
+.padding-right {
+  padding-right: 80px;
+}
+
+.review-rate-form {
+  padding-left: 0;
+  padding-top: 15px;
+}
+
+.block-rate-form {
+  float: left;
+}
+
+.star-rating-form {
+  display: flex;
+  flex-direction: row-reverse;
 }

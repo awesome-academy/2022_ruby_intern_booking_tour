@@ -17,4 +17,13 @@ module ToursHelper
   def date_diff start_date, end_date
     (end_date.to_date - start_date.to_date).to_i
   end
+
+  def render_star_form
+    temp = ""
+    Settings.review.rating_max.downto(1) do |i|
+      temp += "<i class='iconify icon-star-empty-form'
+              data-icon='icomoon-free:star-empty' data-star='#{i}'></i>"
+    end
+    temp
+  end
 end

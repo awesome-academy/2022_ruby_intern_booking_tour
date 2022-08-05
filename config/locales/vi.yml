@@ -146,3 +146,92 @@ vi:
         badge__pending: Đang chờ xác thực
         badge__approve: Chấp thuận
         badge__rejected: Từ chối
+  users:
+    show:
+      show_user_failed: "Hiển thị danh sách user thất bại!"
+      show_user_success: "Hiển thị danh sách user thành công!"
+    update:
+      update_success: "Cập nhật thành công!"
+      update_failed: "Cập nhật thất bại!"
+    destroy:
+      destroy_success: "Xóa thành công!"
+      destroy_failed: "Xóa thất bại!"
+    form:
+      email: "Email"
+      password: "Mật khẩu"
+      password_confirm: "Xác thực mật khẩu"
+      name: "Tên"
+    edit:
+      button_text: "Chỉnh sửa"
+    check_admin:
+      permission: "Bạn không có quyền thao tác!"
+    index:
+      name: "Your name"
+      status: "Status"
+      action: "Action"
+    load_user:
+      load_success: Hiện thị user thành công
+      load_failed: Hiển thị user thất bại
+    tour:
+      find_Tours: "Tìm chuyến tham quan"
+      find_your_tour: " tìm chuyến tham quan của bạn"
+      price_Range: " Phạm vi giá"
+      price_from: " Giá từ:"
+      price_to: " Giá thành:"
+      review_Rating: " Đánh giá xếp hạng"
+      search_tour: " tìm kiếm các chuyến tham quan"
+  tours:
+    tour:
+      day: " Ngày"
+    show:
+      find_Tours: "Tìm chuyến tham quan"
+      start_date: " ngày bắt đầu"
+      end_date: " ngày cuối"
+      day: " Ngày"
+      stock: "hàng trong kho: "
+    booking:
+      quantity: "số lượng"
+      total_price: " Tổng giá"
+      submit: " Gửi đi"
+    index:
+      find_Tours: "Tìm chuyến tham quan"
+      find_your_tour: " tìm chuyến tham quan của bạn"
+      price_Range: " Phạm vi giá"
+      price_from: " Giá từ:"
+      price_to: " Giá thành:"
+      review_Rating: " Đánh giá xếp hạng"
+      search_tour: " tìm kiếm các chuyến tham quan"
+      start_date: " ngày bắt đầu"
+      end_date: " ngày cuối"
+      name: "Tên"
+      no_tours: "không có chuyến tham quan"
+  tour_requests:
+    create:
+      tour_request_success: "đặt chỗ thành công"
+      tour_request_error: "đặt phòng không thành công"
+      quantity_higher_than_stock : "số lượng cao hơn sản phẩm trong kho"
+    index:
+      your_tours: "Chuyến tham quan của bạn"
+    update:
+      quantity_higher_than_stock : "số lượng cao hơn sản phẩm trong kho"
+      tour_request_updated: "yêu cầu chuyến tham quan đã được cập nhật"
+      update_failed: "cập nhật không thành công"
+      tour_request_error: "đặt phòng không thành công"
+    destroy:
+      tour_request_cancelled: "yêu cầu tour du lịch bị hủy"
+      cancel_failed: "yêu cầu hủy chuyến du lịch không thành công"
+    tour_request:
+      quantity: "số lượng"
+      total_price: " Tổng giá"
+      start_date: " ngày bắt đầu"
+      end_date: " ngày cuối"
+      change: "thay đổi"
+      day: " Ngày"
+      stock: "hàng trong kho: "
+  reviews:
+    form:
+      comment: "Bình luận"
+      your_review: "Đánh giá của bạn"
+      review: "Đánh giá"
+    create:
+      review_success: "đánh giá thành công"
