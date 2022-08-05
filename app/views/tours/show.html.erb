@@ -41,8 +41,13 @@
                           <div class="desc">
                             <p class="star"><span>  <%= sanitize render_star(@tour.avg_rating), attributes: %w(class data-icon) %> </span></p>
                             <h2><%= @tour.description %></h2>
-                            <p class="price"><span><%= @tour.price %></span><span>$</span><small> / <%= pluralize((@tour.end_date.to_date - @tour.start_date.to_date).to_i, "day") %></small></p>
-                            <div>
+                            <div class="row">
+                              <p class="price col-sm-3">
+                                <span><%= @tour.price %></span>
+                                <span>$</span>
+                                <small> / <%= pluralize((@tour.end_date.to_date - @tour.start_date.to_date).to_i, "day") %></small>
+                              </p>
+                              <h4 class="col-sm-3 stock"><%= t ".stock" %> <span id="tour_stock"><%= @tour.stock %></span></h4>
                             </div>
                             <div class="col-md-6">
                               <div class="form-group">

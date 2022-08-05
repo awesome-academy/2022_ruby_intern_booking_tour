@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
   include SessionsHelper
+  add_flash_types :success, :danger, :warning
   before_action :set_locale
 
   private

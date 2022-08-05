@@ -48,11 +48,19 @@
                 <%= link_to t(".tours"), tours_path %>
               </li>
               <% if logged_in? %>
-                <li>
-                  <%= link_to t(".profile"), "#" %>
-                </li>
-                <li>
-                  <%= link_to t(".log_out"), logout_path, method: :delete %>
+                <li class="has-dropdown">
+                  <%= link_to t(".account"), "#" %>
+                  <ul class="dropdown">
+                    <li>
+                      <%= link_to t(".profile"), "#" %>
+                    </li>
+                    <li>
+                      <%= link_to t(".booked_tour"), "#" %>
+                    </li>
+                    <li>
+                      <%= link_to t(".log_out"), logout_path, method: :delete %>
+                    </li>
+                  </ul>
                 </li>
               <% else %>
                 <li>

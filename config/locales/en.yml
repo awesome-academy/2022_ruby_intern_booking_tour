@@ -11,6 +11,9 @@ en:
       signup: "Sign up"
     login_success: "Đăng nhập thành công"
     login_failed: "Đăng nhập thất bại"
+    create:
+        login_success: "Đăng nhập thành công"
+        login_failed: "Đăng nhập thất bại"
   layouts:
     header:
       log_out: "Log out"
@@ -115,3 +118,8 @@ en:
       review_Rating: "Review Rating"
       search_tours: "search tours"
       no_tours: "no tours"
+  tour_requests:
+    create:
+      tour_request_success: "booking successful"
+      tour_request_error: "booking failed"
+      quantity_higher_than_stock: "quantity higher than stock"

@@ -1,10 +1,10 @@
-<%= form_for current_user.tour_requests.build do |f| %>
-  <%= hidden_field_tag :tour_id, @tour.id %>
+<%= form_for current_user.tour_requests.build, remote: true do |f| %>
+  <%= f.hidden_field :tour_id, value: @tour.id %>
   <div class="col-md-3">
     <div class="form-group">
       <div class="form-field">
         <span> <%= t ".quantity" %> </span>
-        <%= f.text_field :quantity, class: "form-control" %>
+        <%= f.text_field :quantity, class: "form-control", value: Settings.tour.default_quantity %>
       </div>
     </div>
   </div>
@@ -12,7 +12,7 @@
     <div class="form-group">
       <div class="form-field">
         <span> <%= t ".total_price" %> </span>
-        <%= f.text_field :total_price, class: "form-control" %>
+        <%= f.text_field :total_price, class: "form-control", value: @tour.price %>
       </div>
     </div>
   </div>

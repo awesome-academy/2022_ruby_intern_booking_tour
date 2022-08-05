@@ -19,11 +19,8 @@ import "../animation/iconify.min"
 import "../animation/main"
 import "../custom/custom"
 import "../pagy/pagy.js.erb"
-
+global.toastr = require("toastr")
 
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
-
-require("jquery");
-import "bootstrap";

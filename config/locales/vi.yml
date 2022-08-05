@@ -115,3 +115,8 @@ vi:
       end_date: " ngày cuối"
       name: "Tên"
       no_tours: "không có chuyến tham quan"
+  tour_requests:
+    create:
+      tour_request_success: "đặt chỗ thành công"
+      tour_request_error: "đặt phòng không thành công"
+      quantity_higher_than_stock : "số lượng cao hơn sản phẩm trong kho"

@@ -13,6 +13,7 @@ tour:
   image_size: 5
   image_resize: [500, 500]
   tour_per_page: 30
+  default_quantity: 1
 
 user:
   name_max: 50
