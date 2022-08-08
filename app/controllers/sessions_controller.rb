@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     if @user&.authenticate(params[:session][:password])
       log_in_user
     else
-      flash.now[:danger] = t ".invalid"
+      flash.now[:danger] = t ".login_failed"
       render :new
     end
   end

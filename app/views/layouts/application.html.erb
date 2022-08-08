@@ -8,10 +8,8 @@
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
   </head>
   <body>
+    <%= render "layouts/flash_messages", flash: flash %>
     <%= render "layouts/header" %>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
     <%= yield %>
     <%= render "layouts/footer" %>
   </body>

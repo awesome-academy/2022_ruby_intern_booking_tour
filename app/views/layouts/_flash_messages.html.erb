@@ -1,0 +1,13 @@
+<div id="flash">
+  <script>
+    <% if flash[:success] %>
+      toastr.success("<%= flash[:success] %>")
+    <% end %>
+    <% if flash[:warning] %>
+      toastr.warning("<%= flash[:warning] %>")
+    <% end %>
+    <% if flash[:danger] %>
+      toastr.error("<%= flash[:danger] %>")
+    <% end %>
+  </script>
+</div>

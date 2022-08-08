@@ -23,6 +23,7 @@ gem "rails", "~> 6.1.6"
 gem "rails-i18n"
 gem "sassc-rails"
 gem "sass-rails", ">= 6"
+gem "toastr-rails"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 

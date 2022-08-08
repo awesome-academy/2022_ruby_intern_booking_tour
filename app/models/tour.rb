@@ -10,10 +10,7 @@ class Tour < ApplicationRecord
                         length: {maximum: Settings.tour.name_max}
   validates :description, presence: true,
                                length: {maximum: Settings.tour.description_max}
-  validates :price, presence: true
-  validates :avg_rating, presence: true
-  validates :start_date, presence: true
-  validates :end_date, presence: true
+  validates :price, :avg_rating, :start_date, :end_date, :stock, presence: true
   validates :image, content_type: {in: Settings.tour.image_type,
                                    message: :mess},
                     size: {
