@@ -20,4 +20,5 @@ class TourRequest < ApplicationRecord
       false
     end
   end
+  scope :lastest, ->{order(created_at: :desc)}
 end

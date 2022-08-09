@@ -17,3 +17,16 @@
 @import 'bootstrap';
 @import 'bootstrap-sprockets';
 @import 'toastr';
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1300px;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    margin-top: 50px;
+  }
+  /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+}
