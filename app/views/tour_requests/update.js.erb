@@ -1,0 +1,6 @@
+$('#tour_request_<%= @tour_request.id %>').html("<%= j render @tour_request %>");
+<% if @tour_requests %>
+  $('#container').html("<%= j render @tour_requests %>");
+<% end %>
+$('#flash').html("<%= j render "layouts/flash_messages", flash: flash %>");
+eventQuantity();

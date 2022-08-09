@@ -14,7 +14,24 @@ avg_rating category_id).freeze
                         length: {maximum: Settings.tour.name_max}
   validates :description, presence: true,
                                length: {maximum: Settings.tour.description_max}
-  validates :price, :avg_rating, :start_date, :end_date, :stock, presence: true
+  validates :start_date, :end_date, presence: true
+  validates :price, presence: true,
+                            numericality: {
+                              greater_than_or_equal_to:
+                               Settings.tour.quantity_min
+                            }
+  validates :stock, presence: true,
+                            numericality: {
+                              greater_than_or_equal_to:
+                               Settings.tour.stock_min
+                            }
+  validates :avg_rating, presence: true,
+                         numericality: {
+                           greater_than_or_equal_to:
+                           Settings.tour.rating_min,
+                           smaller_than_or_equal_to:
+                          Settings.tour.rating_max
+                         }
   validates :image, content_type: {in: Settings.tour.image_type,
                                    message: :mess},
                     size: {

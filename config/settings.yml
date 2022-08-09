@@ -19,6 +19,8 @@ tour:
   per_page_admin: 4
   height_limit: 500
   width_limit: 500
+  quantity_min: 1
+  stock_min: 0
 
 user:
   name_max: 50
@@ -32,3 +34,4 @@ user:
 
 tours_request:
   per_page_admin: 8
+  per_page_user: 5

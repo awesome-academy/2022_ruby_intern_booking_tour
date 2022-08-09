@@ -1,0 +1,74 @@
+<div class="col-md-12 animate-box" id="tour_request_<%= tour_request.id %>">
+  <div class="room-wrap">
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <div class="room-img">
+          <%= image_tag tour_request.tour_image %>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="desc">
+          <div class="row">
+            <p class="star col-md-8"><span> <%= sanitize render_star(tour_request.tour_avg_rating), attributes: %w(class data-icon) %> </span></p>
+            <div class="col-md-4">
+              <%= button_to tour_request, class: "close", "aria-label": "Close", method: :delete, remote: true do %>
+                <span aria-hidden="true">&times;</span>
+              <% end %>
+            </div>
+          </div>
+          <h2><%= tour_request.tour_name %></h2>
+          <div class="row">
+            <p class="price col-sm-6">
+              <span><%= number_to_currency tour_request.tour_price %></span>
+              <small> / <%= date_diff tour_request.tour_start_date, tour_request.tour_end_date %> <%= t(".day") %> </small>
+            </p>
+            <h4 class="col-sm-6 stock"><%= t ".stock" %> <span id="tour_stock"><%= tour_request.tour_stock %></span></h4>
+          </div>
+          <div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="form-field">
+                <span> <%= t ".start_date" %> </span>
+                <%= date_field :start_date, "", class: "form-control", value: tour_request.tour_start_date.strftime("%F"), disabled: true %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="form-field">
+                <span> <%= t ".end_date" %> </span>
+                <%= date_field :end_date, "", class: "form-control", value: tour_request.tour_end_date.strftime("%F"), disabled: true %>
+              </div>
+            </div>
+          </div>
+          <%= form_for tour_request, remote: true do |f| %>
+            <div class="col-md-3">
+              <div class="form-group">
+                <div class="form-field">
+                  <span> <%= t ".quantity" %> </span>
+                  <%= f.text_field :quantity, class: "form-control", value: tour_request.quantity %>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <div class="form-field">
+                  <span> <%= t ".total_price" %> </span>
+                  <%= f.text_field :total_price, class: "form-control", value: tour_request.total_price, readonly: true %>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="form-field" id="update_tour_requests_button">
+                  <%= f.submit t(".change"), class: "btn btn-primary", disabled: true %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

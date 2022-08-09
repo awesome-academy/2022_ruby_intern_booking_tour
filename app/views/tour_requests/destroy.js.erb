@@ -1,0 +1,8 @@
+$('#tour_request_<%= @tour_request.id %>').fadeOut('slow',function () {
+  $('#flash').html("<%= j render "layouts/flash_messages", flash: flash %>");
+  $('#container').html("<%= j render @tour_requests %>");
+  $('#pagy_container').html('<%== pagy_bootstrap_nav_js @pagy %>');
+  Pagy.init(document.getElementById('container'));
+  Pagy.init(document.getElementById('pagy_container'));
+  eventQuantity();
+});
