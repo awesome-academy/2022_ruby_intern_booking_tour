@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_08_022357) do
+ActiveRecord::Schema.define(version: 2022_08_09_054550) do
 
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2022_08_08_022357) do
   end
 
   create_table "reviews", charset: "utf8mb3", force: :cascade do |t|
-    t.decimal "rating", precision: 10
+    t.decimal "rating", precision: 5, scale: 1
     t.text "content"
     t.bigint "user_id", null: false
     t.bigint "tour_id", null: false
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 2022_08_08_022357) do
 
   create_table "tour_requests", charset: "utf8mb3", force: :cascade do |t|
     t.integer "quantity"
-    t.decimal "total_price", precision: 10
+    t.decimal "total_price", precision: 5, scale: 1
     t.integer "status", default: 0
     t.bigint "user_id", null: false
     t.bigint "tour_id", null: false
@@ -93,8 +93,8 @@ ActiveRecord::Schema.define(version: 2022_08_08_022357) do
   create_table "tours", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.decimal "price", precision: 10
-    t.decimal "avg_rating", precision: 10
+    t.decimal "price", precision: 5, scale: 1
+    t.decimal "avg_rating", precision: 5, scale: 1
     t.datetime "start_date"
     t.datetime "end_date"
     t.bigint "category_id", null: false

@@ -1,0 +1,11 @@
+$('#flash').html("<%= j render "layouts/flash_messages", flash: flash %>");
+$('#container').prepend("<%= j render @review %>");
+$('#container').children().last().remove()
+$('#review_rating').prop('selectedIndex',0);
+$('#review_content').val("");
+$('p.star').html('<span> <%= sanitize render_star(@review.tour.avg_rating), attributes: %w(class data-icon) %> </span>')
+$('#pagy_container').html('<%== pagy_bootstrap_nav_js @pagy %>');
+$('.star-rating-form').html('<%= sanitize render_star_form, attributes: %w(class data-icon data-star) %>');
+observer.observe($('.star-rating-form')[0], {attributes: true, childList: true, subtree: true});
+Pagy.init(document.getElementById('container'));
+Pagy.init(document.getElementById('pagy_container'));

@@ -11,7 +11,7 @@
     </div>
     <div class="col-sm-9">
       <div class="review-block-rate">
-        <span>  <%= sanitize render_star(@tour.avg_rating), attributes: %w(class data-icon) %> </span>
+        <span>  <%= sanitize render_star(review.rating), attributes: %w(class data-icon) %> </span>
       </div>
       <div class="review-block-title"><%= review.content %></div>
     </div>

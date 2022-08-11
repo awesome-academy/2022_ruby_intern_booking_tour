@@ -5,6 +5,7 @@ review:
   review_per_page: 5
   admin_per_page: 7
   star: 5
+  review_option: [0, 1, 2, 3, 4, 5]
 
 tour:
   name_max: 120
