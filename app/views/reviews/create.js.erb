@@ -1,6 +1,8 @@
 $('#flash').html("<%= j render "layouts/flash_messages", flash: flash %>");
 $('#container').prepend("<%= j render @review %>");
-$('#container').children().last().remove()
+if ($('#container').children().length > 5) {
+  $('#container').children().last().remove()
+}
 $('#review_rating').prop('selectedIndex',0);
 $('#review_content').val("");
 $('p.star').html('<span> <%= sanitize render_star(@review.tour.avg_rating), attributes: %w(class data-icon) %> </span>')

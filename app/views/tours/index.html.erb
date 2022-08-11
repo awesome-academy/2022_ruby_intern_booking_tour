@@ -46,13 +46,13 @@
           <div class="sidebar-wrap">
             <div class="side search-wrap animate-box">
               <h3 class="sidebar-heading"><%= t ".find_your_tour" %></h3>
-              <%= form_tag(tours_path, method: :get, class: "colorlib-form") do %>
+              <%= form_tag(tours_path, method: :get, class: "colorlib-form", id: "search-form", remote: true) do %>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
                       <%= label_tag :name, t(".name") %>
                       <div class="form-field">
-                        <%= text_field_tag :name, "", class: "form-control", placeholder: t(".search_tour") %>
+                        <%= text_field_tag "search[name]", "", class: "form-control", placeholder: t(".search_tour") %>
                       </div>
                     </div>
                   </div>
@@ -60,7 +60,7 @@
                     <div class="form-group">
                       <%= label_tag :start_date, t(".start_date") %>
                       <div class="form-field">
-                        <%= date_field_tag :start_date, "", class: "form-control" %>
+                        <%= date_field_tag "search[start_date]", "", class: "form-control" %>
                       </div>
                     </div>
                   </div>
@@ -68,7 +68,7 @@
                     <div class="form-group">
                       <%= label_tag :end_date, t(".end_date") %>
                       <div class="form-field">
-                        <%= date_field_tag :end_date, "", class: "form-control" %>
+                        <%= date_field_tag "search[end_date]", "", class: "form-control" %>
                       </div>
                     </div>
                   </div>
@@ -76,50 +76,15 @@
                     <%= submit_tag t(".find_Tours"), class: "btn btn-primary btn-block" %>
                   </div>
                 </div>
-              <% end %>
-            </div>
-            <div class="side animate-box">
-              <div class="row">
-                <div class="col-md-12">
-                  <h3 class="sidebar-heading"><%= t ".price_Range" %></h3>
-                  <form method="post" class="colorlib-form-2">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="guests"><%= t ".price_from" %></label>
-                          <div class="form-field">
-                            <i class="icon icon-arrow-down3"></i>
-                            <select name="people" id="people" class="form-control">
-                              <option value="#">1</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="guests"><%= t ".price_to" %></label>
-                          <div class="form-field">
-                            <i class="icon icon-arrow-down3"></i>
-                            <select name="people" id="people" class="form-control">
-                              <option value="#">2000</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
               </div>
-            </div>
-            <div class="side animate-box">
-              <div class="row">
-                <div class="col-md-12">
-                  <h3 class="sidebar-heading"><%= t ".review_Rating" %></h3>
-                  <%= form_with url: tours_path, method: :get, id: "rating_filter_form", local: false do |f| %>
+              <div class="side animate-box">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h3 class="sidebar-heading"><%= t ".review_Rating" %></h3>
                     <% for i in 0..5 do %>
                       <div class="form-check">
-                        <%= f.check_box "rating_filter_#{Settings.tour.rating_max-i}", value: 1, checked: true, class: "form-check-input" %>
-                        <%= f.label "rating_filter_#{Settings.tour.rating_max-i}", "" do %>
+                        <%= check_box_tag "rating_filter_#{Settings.tour.rating_max-i}", 1, checked: true %>
+                        <%= label_tag "rating_filter_#{Settings.tour.rating_max-i}", "" do %>
                           <p class="rate"><span> <%= sanitize render_star(Settings.tour.rating_max-i), attributes: %w(class data-icon) %> </span></p>
                         <% end %>
                       </div>
