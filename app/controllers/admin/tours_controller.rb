@@ -63,9 +63,4 @@ class Admin::ToursController < ApplicationController
   def tour_params
     params.require(:tour).permit Tour::UPDATABLE_ATTRS
   end
-
-  def tour_filter_params
-    params.require(:tours_filter).permit %i(start_date end_date price
-avg_rating category_id name)
-  end
 end
