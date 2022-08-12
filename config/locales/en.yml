@@ -7,6 +7,13 @@ en:
         separator: "."
         precision: 2
         format: "%n %u"
+  activerecord:
+    errors:
+      models:
+        tour_request:
+          attributes:
+            tour:
+              invalid_date: "has already begin or ended"
   sessions:
     new:
       login: "Log in"

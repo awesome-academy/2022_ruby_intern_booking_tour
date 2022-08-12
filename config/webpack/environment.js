@@ -9,5 +9,5 @@ environment.plugins.prepend('Provide',
     })
 )
 
-environment.loaders.prepend('erb', erb)
+environment.loaders.prepend('erb',erb)
 module.exports = environment

@@ -115,16 +115,14 @@
               <div class="row">
                 <div class="col-md-12">
                   <h3 class="sidebar-heading"><%= t ".review_Rating" %></h3>
-                  <%= form_tag(tours_path, method: :get, class: "colorlib-form-2") do %>
-                    <% temp = 5 %>
-                    <% while temp > 0 %>
+                  <%= form_with url: tours_path, method: :get, id: "rating_filter_form", local: false do |f| %>
+                    <% for i in 0..5 do %>
                       <div class="form-check">
-                        <%= check_box_tag :rating_filter, class: "form-check-input" %>
-                        <%= label_tag :rating_filter, "" do %>
-                          <p class="rate"><span> <%= sanitize render_star(temp), attributes: %w(class data-icon) %> </span></p>
+                        <%= f.check_box "rating_filter_#{Settings.tour.rating_max-i}", value: 1, checked: true, class: "form-check-input" %>
+                        <%= f.label "rating_filter_#{Settings.tour.rating_max-i}", "" do %>
+                          <p class="rate"><span> <%= sanitize render_star(Settings.tour.rating_max-i), attributes: %w(class data-icon) %> </span></p>
                         <% end %>
                       </div>
-                      <% temp -= 1 %>
                     <% end %>
                   <% end %>
                 </div>

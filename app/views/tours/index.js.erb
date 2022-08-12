@@ -1,4 +1,9 @@
-$('#container').html("<%= j render @tours %>");
-$('#pagy_container').html('<%== pagy_bootstrap_nav_js @pagy %>');
-Pagy.init(document.getElementById('container'));
-Pagy.init(document.getElementById('pagy_container'));
+<% if @tours.empty? %>
+  $('#container').html('<h1><%= t ".no_tours" %></h1>');
+  $('#pagy_container').html("");
+<% else %>
+  $('#container').html("<%= j render @tours %>");
+  $('#pagy_container').html('<%== pagy_bootstrap_nav_js @pagy %>');
+  Pagy.init($('#container'));
+  Pagy.init($('#pagy_container'));
+<% end %>

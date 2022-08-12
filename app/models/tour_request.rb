@@ -14,6 +14,7 @@ class TourRequest < ApplicationRecord
 
   UPDATABLE_ATTRS = %i(user_id tour_id quantity total_price).freeze
 
+  validate :check_valid_date
   validates :status, presence: true
   validates :quantity, :total_price, presence: true,
                                      numericality: {
@@ -51,5 +52,11 @@ class TourRequest < ApplicationRecord
 
   def add_stock
     tour.update! stock: (tour.stock + quantity)
+  end
+
+  def check_valid_date
+    return true if Time.zone.now.to_date.to_s < tour.start_date
+
+    errors.add(:tour, :invalid_date)
   end
 end

@@ -9,6 +9,7 @@ class TourRequestsController < ApplicationController
   def create
     tour_request =
       TourRequest.create tour_requests_params.merge(user_id: current_user.id)
+
     if tour_request.persisted?
       find_tour
       tour_request_success

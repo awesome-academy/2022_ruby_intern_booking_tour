@@ -7,6 +7,13 @@ vi:
         separator: "."
         precision: 2
         format: "%n %u"
+  activerecord:
+    errors:
+      models:
+        tour_request:
+          attributes:
+            tour:
+              invalid_date: "đã bắt đầu hoặc kết thúc"
   sessions:
     new:
       login: "đăng nhập"
