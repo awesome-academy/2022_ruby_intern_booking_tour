@@ -1,6 +1,6 @@
 class ToursController < ApplicationController
   before_action :find_tour, :load_comments, only: :show
-  before_action :filter_rating, :load_tours, only: :index
+  before_action :gen_filter_rating, :filter_tour, only: :index
 
   def show; end
 
@@ -21,37 +21,31 @@ class ToursController < ApplicationController
     redirect_to root_path
   end
 
-  def load_tours
-    if @rating_filter.empty?
-      @pagy, @tours = pagy Tour.recent_tours,
-                           items: Settings.tour.tour_per_page,
-                           link_extra: 'data-remote="true"'
-    else
-      filter_tour
-    end
-  end
-
   def load_comments
     @pagy, @reviews = pagy @tour.reviews.most_recent,
                            items: Settings.review.review_per_page,
                            link_extra: 'data-remote="true"'
   end
 
-  def filter_tour
-    get_rating = @rating_filter.map.with_index do |value, index|
-      index if value == "1"
-    end
-
-    @pagy, @tours = pagy Tour.by_rating_array(get_rating).recent_tours,
-                         items: Settings.tour.tour_per_page,
-                         link_extra: 'data-remote="true"'
-  end
-
-  def filter_rating
+  def gen_filter_rating
     @rating_filter = []
     (0..Settings.review.rating_max).each do |i|
       rating = params["rating_filter_#{i}"]
       @rating_filter[i] = rating if rating.present?
     end
+
+    @rating_filter.map!.with_index do |x, i|
+      i if x == "1"
+    end
+  end
+
+  def filter_tour
+    @pagy, @tours = pagy Tour.by_most_name(params.dig(:search, :name))
+                             .by_start_date(params.dig(:search, :start_date))
+                             .by_end_date(params.dig(:search, :end_date))
+                             .by_rating_array(@rating_filter)
+                             .recent_tours,
+                         items: Settings.tour.tour_per_page,
+                         link_extra: 'data-remote="true"'
   end
 end

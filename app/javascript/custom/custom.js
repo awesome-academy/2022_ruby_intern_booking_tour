@@ -82,18 +82,19 @@ global.eventRating = function eventRating() {
   })
 };
 
-observer = new MutationObserver(() => {
-  eventRating();
-});
-
 global.eventRatingOnLoad = function eventRating() {
-  observer.observe($('.star-rating-form')[0],{ attributes: true,childList: true,subtree: true });
+  observer = new MutationObserver(() => {
+    global.eventRating();
+  });
+  if ($('.star-rating-form').length > 0) {
+    observer.observe($('.star-rating-form')[0],{ attributes: true,childList: true,subtree: true });
+  }
 };
 
 global.eventReview = function eventReview() {
   for (let i = 0; i < 6; i++) {
     $(`#rating_filter_${i}`).on("change",() => {
-      Rails.fire($('#rating_filter_form')[0],'submit');
+      Rails.fire($('#search-form')[0],'submit');
     })
   };
 }
