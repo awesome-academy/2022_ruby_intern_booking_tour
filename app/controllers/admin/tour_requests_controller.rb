@@ -1,4 +1,5 @@
 class Admin::TourRequestsController < ApplicationController
+  layout "layouts/application_admin"
   before_action :logged_in_user
   before_action :check_admin, only: %i(index update destroy)
   before_action :load_tour_requests, except: %i(index)

@@ -1,3 +1,4 @@
+$('#flash').html('<%= j render "layouts/flash_messages", flash: flash %> ');
 $('#badge_request').html('<%= j render "badge_request", tour_request: @tour_request %>');
 <% if @tour_request.rejected? %>
   $('#delete_tour_request').removeClass("none")

@@ -1,27 +1,18 @@
-<div class="col-md-6 col-sm-6 animate-box">
-  <div class="hotel-entry">
-    <%= link_to admin_tour_path(tour.id) do %>
-      <%= image_tag tour.display_image, class: "hotel-img"  if tour.image.attached? %>
-      <p class="price"><span>$<%= tour.price %></span><small> <%= t ".night" %></small></p>
+<tr>
+  <td><input type="checkbox" class="checkthis" /></td>
+  <td><%= tour.name %></td>
+  <td><%= tour.price %></td>
+  <td> <%= sanitize render_star(tour.avg_rating), attributes: %w(class data-icon) %></td>
+  <td><%=  tour.end_date %></td>
+  <td><%=  tour.start_date %></td>
+   <td><%= tour.category_name %></td>
+   <td><%= tour.stock %></td>
+  <td>
+   <%= link_to edit_admin_tour_path(tour.id) do %>
+        <i class="nc-icon nc-ruler-pencil text-success m-2"></i>
+      <% end %>
+    <%= link_to admin_tour_path(tour.id), method: :delete, data: {confirm: t(".delete")}, class: "text-danger", remote: true do %>
+      <i class="nc-icon nc-simple-remove text-danger"></i>
     <% end %>
-    <div class="desc">
-      <p class="star">
-        <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
-        <%= tour.reviews.count %> <%= t ".reviews" %>
-      </p>
-      <h3><a href="hotel-room.html"><%= tour.name %></a></h3>
-      <span class="place"><%= tour.category.name %></span>
-      <p class="description">
-        <%= tour.description %>
-      </p>
-    </div>
-    <div class="flex-container">
-      <%= link_to edit_admin_tour_path(tour), class:"text-info" do %>
-        <i class="fas fa-pencil-alt"></i>
-      <% end %>
-      <%= link_to admin_tour_path(tour), method: :delete, data: {confirm: t(".delete")}, class: "text-danger" do %>
-        <i class="far fa-trash-alt"></i>
-      <% end %>
-    </div>
-  </div>
-</div>
+  </td>
+</tr>

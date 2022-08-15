@@ -6,6 +6,7 @@
           <div class="col-md-8">
             <%= image_tag @tour.display_image, class: "hotel-img"  if @tour.image.attached? %>
             <p class="price"><span>$<%= @tour.price %></span><small> <%= t ".night" %></small></p>
+            <%= sanitize render_star(@tour.avg_rating), attributes: %w(class data-icon) %>
           </div>
           <div class="col-md-4">
             <div class="flex-container">

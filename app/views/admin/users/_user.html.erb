@@ -1,45 +1,24 @@
-<tr class="candidates-list">
-  <td class="title">
-    <div class="thumb">
-      <img
-        class="img-fluid"
+<tr>
+  <td>
+    <img
         src="https://bootdey.com/img/Content/avatar/avatar7.png"
         alt="">
-      </div>
-      <div class="candidate-list-details">
-        <div class="candidate-list-info">
-          <div class="candidate-list-title">
-            <h5 class="mb-0"><a href="#"><%= user.name %></a></h5>
-          </div>
-          <div class="candidate-list-option">
-            <ul class="list-unstyled">
-              <li><i class="fas fa-filter pr-1"></i> <%= user.email %></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </td>
-    <td class="candidate-list-favourite-time text-center">
-      <a class="candidate-list-favourite order-2 text-danger" href="#"><i class="fas fa-heart"></i></a>
-      <span class="candidate-list-time order-1"></span>
     </td>
     <td>
-      <ul class="list-unstyled mb-0 flex__items">
-        <li>
-          <%= link_to "#", class:"text-primary" do %>
-            <i class="far fa-eye"></i>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to edit_admin_user_path(user.id), class:"text-info" do %>
-            <i class="fas fa-pencil-alt"></i>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to admin_user_path(user.id), method: :delete, data: {confirm: t(".delete")}, class: "text-danger" do %>
-            <i class="far fa-trash-alt"></i>
-          <% end %>
-        </li>
-      </ul>
+      <%= user.name %>
     </td>
-  </tr>
+    <td>
+      <%= user.email %>
+    </td>
+    <td>
+      <%= user.role %>
+    </td>
+    <td>
+      <%= link_to edit_admin_user_url(user.id) do %>
+        <i class="nc-icon nc-ruler-pencil text-success m-2"></i>
+      <% end %>
+    <%= link_to admin_user_path(user.id), method: :delete, data: {confirm: t(".delete")}, class: "text-danger", remote: true do %>
+      <i class="nc-icon nc-simple-remove text-danger"></i>
+    <% end %>
+  </td>
+</tr>

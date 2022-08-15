@@ -1,0 +1,34 @@
+<div class="sidebar" data-color="white" data-active-color="danger">
+  <div class="logo">
+    <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+      <div class="logo-image-small">
+      </div>
+      <!-- <p>CT</p> -->
+    </a>
+    <a
+            href="https://www.creative-tim.com"
+            class="simple-text logo-normal"
+          >
+      Creative Tim
+      <!-- <div class="logo-image-big">
+            <img src="../assets/img/logo-big.png">
+          </div> -->
+    </a>
+  </div>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+      <li>
+        <%= link_to t(".users"), admin_users_path %>
+      </li>
+      <li>
+        <%= link_to t(".tours"), admin_tours_path %>
+      </li>
+      <li>
+        <%= link_to t(".requests"), admin_tour_requests_path %>
+      </li>
+      <li>
+        <%= link_to t(".log_out"), logout_path, method: :delete %>
+      </li>
+    </ul>
+  </div>
+</div>

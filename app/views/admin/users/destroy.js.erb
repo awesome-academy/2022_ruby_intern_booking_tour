@@ -1,0 +1,3 @@
+$('#flash').html('<%= j render "layouts/flash_messages", flash: flash %> ');
+$('#list_users').html('<%= j render @users %>');
+$('#list_users_pagy').html('<%== pagy_bootstrap_nav(@pagy) %>');

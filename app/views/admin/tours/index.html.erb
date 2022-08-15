@@ -1,17 +1,25 @@
-<div class="list_tours">
-  <div class="container">
-    <%= render "navbar" %>
-    <div class="row">
-      <div class="col-md-9">
-        <div class="wrap-division">
-          <%= render @tours %>
-        </div>
-        <%== pagy_bootstrap_nav @pagy %>
-      </div>
+<div class="col-md-12">
 
-      <div class="col-md-3">
-        <%= render "sidebar" %>
-      </div>
-    </div>
+<%= render "search_form" %>
+<div class="list_tours">
+        <table id="mytable" class="table table-bordred table-striped">
+          <thead>
+            <th><input type="checkbox" id="checkall" /></th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Ratings</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Category</th>
+            <th>Stock</th>
+            <th>Action</th>
+          </thead>
+          <tbody id="list_tours">
+            <%= render @tours %>
+          </tbody>
+        </table>
+  <div id="list_tours_pagy">
+    <%== pagy_bootstrap_nav @pagy %>
   </div>
+</div>
 </div>

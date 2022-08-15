@@ -1,10 +1,11 @@
 class Admin::UsersController < ApplicationController
+  layout "layouts/application_admin"
   before_action :logged_in_user
   before_action :check_admin
   before_action :load_user, except: %i(index)
 
   def index
-    @pagy, @users = pagy(User.all, items: Settings.user.per_page)
+    @pagy, @users = pagy(User.all.lastest, items: Settings.user.per_page)
   end
 
   def show; end
@@ -13,24 +14,36 @@ class Admin::UsersController < ApplicationController
 
   def update
     if @user.update user_params
-      flash[:success] = t ".update_success"
-      redirect_to admin_users_path
+      success_format t ".update_success"
     else
-      flash.now[:danger] = t ".update_failed"
-      render :edit
+      danger_format t ".update_failed"
     end
   end
 
   def destroy
+    total = User.all.count
+    index = User.all.find_index(@user)
     if @user.destroy
-      flash[:success] = t ".destroy_success"
+      cur_page = handle_page total, index
+      @pagy, @users = pagy(User.all.lastest, items: Settings.user.per_page,
+                            page: cur_page)
+      success_format t ".destroy_success"
     else
-      flash[:danger] = t ".destroy_danger"
+      danger_format t ".destroy_danger"
     end
-    redirect_to admin_users_path
   end
 
   private
+
+  def handle_page total, index
+    cur_page = (((total - index) - 1) / Settings.user.per_page).ceil + 1
+
+    users = User.limit(Settings.user.per_page).offset(
+      Settings.user.per_page * (cur_page - 1)
+    )
+    cur_page -= 1 if users.empty?
+    cur_page
+  end
 
   def load_user
     @user = User.find_by id: params[:id]
