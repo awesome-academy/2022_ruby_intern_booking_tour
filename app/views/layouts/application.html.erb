@@ -15,11 +15,9 @@
     <% else %>
       <%= render "layouts/header" %>
     <% end %>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
     <% if !current_user || current_user&.user? %>
       <%= yield %>
+      <%= render "layouts/popup_messages" %>
     <% end %>
     <% if !current_user || current_user&.user? %>
       <%= render "layouts/footer" %>

@@ -228,20 +228,6 @@
 		});
 	};
 
-	$(function () {
-		mobileMenuOutsideClick();
-		offcanvasMenu();
-		burgerMenu();
-		contentWayPoint();
-		sliderMain();
-		dropdown();
-		goToTop();
-		loaderPage();
-		// owlCrouselFeatureSlide();
-		// parallax();
-		datePicker();
-	});
-
 	$(document).on('turbolinks:load',function () {
 		mobileMenuOutsideClick();
 		offcanvasMenu();
@@ -254,5 +240,6 @@
 		// owlCrouselFeatureSlide();
 		// parallax();
 		datePicker();
+		popupMessages();
 	})
 }());

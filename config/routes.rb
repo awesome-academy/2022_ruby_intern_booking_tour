@@ -16,5 +16,6 @@ Rails.application.routes.draw do
       resources :tour_requests
     end
     resources :account_activations, only: :edit
+    mount ActionCable.server => '/cable'
   end
 end

@@ -76,14 +76,14 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = {host: ENV["HOST"] }
+  config.action_mailer.default_url_options = {host: ENV["HOST"]}
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-  address: ENV["MAIL_ADDRESS"],
-  port: ENV["MAIL_PORT"],
-  user_name: ENV["MAIL_USER_NAME"],
-  password: ENV["MAIL_USER_PASSWORD"],
-  authentication: "plain",
-  enable_starttls_auto: true
+    address: ENV["MAIL_ADDRESS"],
+    port: ENV["MAIL_PORT"],
+    user_name: ENV["MAIL_USER_NAME"],
+    password: ENV["MAIL_USER_PASSWORD"],
+    authentication: "plain",
+    enable_starttls_auto: true
   }
 end

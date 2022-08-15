@@ -49,6 +49,9 @@ en:
       top_deals: "top deals"
       blog_post: "blog post"
       contact_information: "contact information"
+    popup_messages:
+      has_just_booked: "has just booked"
+      just_now: "just now"
   static_pages:
     home:
       amazing_maldivest_tour: "amazing maldivest tour"
@@ -79,83 +82,6 @@ en:
       sign_Up_Now: "Sign Up Now"
       singup_description: "Sign up to get the full features of our site"
       signup: "Sign up"
-  admin:
-    users:
-      show:
-        show_user_failed: "Show user failed!"
-        show_user_success: "Show users successfully!"
-      update:
-        update_success: "Update successfully!"
-        update_failed: "Update failed!"
-      destroy:
-        destroy_success: "Destroy successfully!"
-        destroy_failed: "Destroy failed!"
-      form:
-        email: "Email"
-        password: "Password"
-        password_confirm: "Password Confirm"
-        name: "Name"
-      edit:
-        button_text: "Edit"
-      check_admin:
-        permission: "You dont have permission!"
-      index:
-        name: "Your name"
-        status: "Status"
-        action: "Action"
-    tours:
-      form:
-        name: Name
-        description: Description
-        avg_rating: Rating
-        category: Category
-        image: Image
-        price: Price
-        start_date: Start date
-        end_date: End date
-      edit:
-        button_text: Edit
-      new:
-        button_text: Add
-      create:
-        tours_create_successful: Create tour successfully!
-        tours_not_saved: Tour not saved!
-      show:
-        show_tour_success: Show tour successfully!
-        show_tour_failed: Show tour failed!
-      update:
-        update_success: Update successfully!
-        update_failed: Update field!
-      destroy:
-        destroy_success: Destroy successfully!
-        destroy_danger: Destroy field!
-      tour:
-        night: /night
-        reviews: reviews
-        delete: delete
-    review_ratings:
-        title: Average user rating
-        title_breakdown: Rating breakdown
-    reviews:
-      review:
-        confirm: Confirm
-    tour_requests:
-      destroy:
-        destroy_success: Destroy successfully
-        destroy_danger: Destroy failed
-      tour_request:
-        delete: Delete
-        userName: User's Name
-        userEmail: User's email
-        startDate: Start Date
-        endDate: End Date
-        btn_approve: Approve
-        btn_reject: Reject
-        btn_delete: Delete
-      badge_request:
-        badge__pending: Pending
-        badge__approve: Approve
-        badge__rejected: Rejected
   users:
     show:
       show_user_failed: "Show user failed!"
@@ -246,6 +172,84 @@ en:
       review: "review"
     create:
       review_success: "review success"
+  admin:
+    users:
+      show:
+        show_user_failed: "Show user failed!"
+        show_user_success: "Show users successfully!"
+      update:
+        update_success: "Update successfully!"
+        update_failed: "Update failed!"
+      destroy:
+        destroy_success: "Destroy successfully!"
+        destroy_failed: "Destroy failed!"
+      form:
+        email: "Email"
+        password: "Password"
+        password_confirm: "Password Confirm"
+        name: "Name"
+      edit:
+        button_text: "Edit"
+      check_admin:
+        permission: "You dont have permission!"
+      index:
+        name: "Your name"
+        status: "Status"
+        action: "Action"
+    tours:
+      form:
+        name: Name
+        description: Description
+        avg_rating: Rating
+        category: Category
+        image: Image
+        price: Price
+        start_date: Start date
+        end_date: End date
+      edit:
+        button_text: Edit
+      new:
+        button_text: Add
+      create:
+        tours_create_successful: Create tour successfully!
+        tours_not_saved: Tour not saved!
+      show:
+        show_tour_success: Show tour successfully!
+        show_tour_failed: Show tour failed!
+      update:
+        update_success: Update successfully!
+        update_failed: Update field!
+      destroy:
+        destroy_success: Destroy successfully!
+        destroy_danger: Destroy field!
+      tour:
+        night: /night
+        reviews: reviews
+        delete: delete
+    review_ratings:
+        title: Average user rating
+        title_breakdown: Rating breakdown
+    reviews:
+      review:
+        confirm: Confirm
+    tour_requests:
+      destroy:
+        destroy_success: Destroy successfully
+        destroy_danger: Destroy failed
+      tour_request:
+        delete: Delete
+        userName: User's Name
+        userEmail: User's email
+        startDate: Start Date
+        endDate: End Date
+        btn_approve: Approve
+        btn_reject: Reject
+        btn_delete: Delete
+      badge_request:
+        badge__pending: Pending
+        badge__approve: Approve
+        badge__rejected: Rejected
+
 
   tour_request_mailer:
     auth_tour_request:

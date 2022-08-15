@@ -46,6 +46,9 @@ vi:
       top_deals: " giao dịch hàng đầu"
       blog_post: " bài viết trên blog"
       contact_information: " thông tin liên lạc"
+    popup_messages:
+      has_just_booked: "vừa đặt"
+      just_now: "vừa xong"
   static_pages:
     home:
       amazing_maldivest_tour: "chuyến tham quan tuyệt vời"
@@ -76,83 +79,6 @@ vi:
       sign_Up_Now: " Đăng ký ngay"
       singup_description: " Đăng ký để có được các tính năng đầy đủ của trang web của chúng tôi"
       signup: " Đăng ký"
-  admin:
-    users:
-      show:
-        show_user_failed: "Hiển thị danh sách user thất bại!"
-        show_user_success: "Hiển thị danh sách user thành công!"
-      update:
-        update_success: "Cập nhật thành công!"
-        update_failed: "Cập nhật thất bại!"
-      destroy:
-        destroy_success: "Xóa thành công!"
-        destroy_failed: "Xóa thất bại!"
-      form:
-        email: "Email"
-        password: "Mật khẩu"
-        password_confirm: "Xác thực mật khẩu"
-        name: "Tên"
-      edit:
-        button_text: "Chỉnh sửa"
-      check_admin:
-        permission: "Bạn không có quyền thao tác!"
-      index:
-        name: "Your name"
-        status: "Status"
-        action: "Action"
-    tours:
-      form:
-        name: Tên tour
-        description: Thông tin chi tiết
-        avg_rating: Rating
-        category: Danh mục
-        image: Hình ảnh
-        price: Giá
-        start_date: Ngày bắt đầu
-        end_date: Ngày kết thúc
-      edit:
-        button_text: Sửa
-      new:
-        button_text: Thêm
-      create:
-        tours_create_successful: thêm tour thành công!
-        tours_not_saved: Tour thêm thất bại!
-      show:
-        show_tour_success: Hiển thị tour chi tiết thành công!
-        show_tour_failed: Hiển thị tour chi tiết thất bại!
-      update:
-        update_success: Cập nhật thành công!
-        update_failed: Cập nhật thất bại!
-      destroy:
-        destroy_success: Xóa thành công!
-        destroy_danger: Xóa thất bại!
-      tour:
-        night: /đêm
-        reviews: reivews
-        delete: Xóa
-    review_ratings:
-        title: Average user rating
-        title_breakdown: Rating breakdown
-    reviews:
-      review:
-        confirm: Xác thực
-    tour_requests:
-      destroy:
-        destroy_success: Xóa thành công
-        destroy_danger: Xóa thất bại
-      tour_request:
-        delete: Xóa
-        userName: Tên người dùng
-        userEmail: Email người dùng
-        startDate: Ngày bắt đầu
-        endDate: Ngày kết thúc
-        btn__approve: Chấp thuận
-        btn__reject: Từ chối
-        btn__delete: Xóa
-      badge_request:
-        badge__pending: Đang chờ xác thực
-        badge__approve: Chấp thuận
-        badge__rejected: Từ chối
   users:
     show:
       show_user_failed: "Hiển thị danh sách user thất bại!"
@@ -242,6 +168,84 @@ vi:
       review: "Đánh giá"
     create:
       review_success: "đánh giá thành công"
+  admin:
+    users:
+      show:
+        show_user_failed: "Hiển thị danh sách user thất bại!"
+        show_user_success: "Hiển thị danh sách user thành công!"
+      update:
+        update_success: "Cập nhật thành công!"
+        update_failed: "Cập nhật thất bại!"
+      destroy:
+        destroy_success: "Xóa thành công!"
+        destroy_failed: "Xóa thất bại!"
+      form:
+        email: "Email"
+        password: "Mật khẩu"
+        password_confirm: "Xác thực mật khẩu"
+        name: "Tên"
+      edit:
+        button_text: "Chỉnh sửa"
+      check_admin:
+        permission: "Bạn không có quyền thao tác!"
+      index:
+        name: "Your name"
+        status: "Status"
+        action: "Action"
+    tours:
+      form:
+        name: Tên tour
+        description: Thông tin chi tiết
+        avg_rating: Rating
+        category: Danh mục
+        image: Hình ảnh
+        price: Giá
+        start_date: Ngày bắt đầu
+        end_date: Ngày kết thúc
+      edit:
+        button_text: Sửa
+      new:
+        button_text: Thêm
+      create:
+        tours_create_successful: thêm tour thành công!
+        tours_not_saved: Tour thêm thất bại!
+      show:
+        show_tour_success: Hiển thị tour chi tiết thành công!
+        show_tour_failed: Hiển thị tour chi tiết thất bại!
+      update:
+        update_success: Cập nhật thành công!
+        update_failed: Cập nhật thất bại!
+      destroy:
+        destroy_success: Xóa thành công!
+        destroy_danger: Xóa thất bại!
+      tour:
+        night: /đêm
+        reviews: reivews
+        delete: Xóa
+    review_ratings:
+        title: Average user rating
+        title_breakdown: Rating breakdown
+    reviews:
+      review:
+        confirm: Xác thực
+    tour_requests:
+      destroy:
+        destroy_success: Xóa thành công
+        destroy_danger: Xóa thất bại
+      tour_request:
+        delete: Xóa
+        userName: Tên người dùng
+        userEmail: Email người dùng
+        startDate: Ngày bắt đầu
+        endDate: Ngày kết thúc
+        btn__approve: Chấp thuận
+        btn__reject: Từ chối
+        btn__delete: Xóa
+      badge_request:
+        badge__pending: Đang chờ xác thực
+        badge__approve: Chấp thuận
+        badge__rejected: Từ chối
+
 
   tour_request_mailer:
     auth_tour_request:

@@ -48,7 +48,7 @@ class Tour < ApplicationRecord
     where("start_date >= ?", start_date) if start_date.present?
   end)
   scope :by_end_date, (lambda do |end_date|
-    where("end_date >= ?", end_date) if end_date.present?
+    where("end_date <= ?", end_date) if end_date.present?
   end)
   scope :by_most_name, (lambda do |name|
     where("name LIKE ?", "%#{name}%") if name.present?
