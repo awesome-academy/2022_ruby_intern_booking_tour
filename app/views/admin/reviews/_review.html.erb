@@ -1,9 +1,7 @@
-<div class="row">
+<div class="row m-5">
   <div class="col-sm-3">
     <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
     <div class="review-block-name"><a href="#"><%= review.user_name %></a></div>
-    <div class="review-block-date"><br>
-      <%= date_field :created_at, "", class: "form-control", value: review.created_at.strftime("%F"), disabled: true %></div>
   </div>
   <div class="col-sm-7">
     <div class="review-block-rate">
@@ -11,10 +9,13 @@
     </div>
     <div class="review-block-title"><%= review.tour_name %></div>
     <div class="review-block-description"><%= review.content %></div>
+    <div class="review-block-date mt-3 mb-3">
+      <%= date_field :created_at, "", class: "form-control", value: review.created_at.strftime("%F"), disabled: true %>
+    </div>
   </div>
   <div class="col-sm-2">
     <%= link_to admin_review_path(review), method: :delete, data: {confirm: t(".confirm")}, class: "text-danger" do %>
-      <i class="far fa-trash-alt"></i>
+      <span class="iconify" data-icon="bi:trash"></span>
     <% end %>
   </div>
 </div>

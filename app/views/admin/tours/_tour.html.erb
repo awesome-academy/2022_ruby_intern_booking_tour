@@ -3,14 +3,15 @@
   <td><%= tour.name %></td>
   <td><%= tour.price %></td>
   <td> <%= sanitize render_star(tour.avg_rating), attributes: %w(class data-icon) %></td>
-  <td><%=  tour.end_date %></td>
   <td><%=  tour.start_date %></td>
-   <td><%= tour.category_name %></td>
-   <td><%= tour.stock %></td>
+  <td><%=  tour.end_date %></td>
+  <td><%= tour.category_name %></td>
+  <td><%= tour.stock %></td>
   <td>
-   <%= link_to edit_admin_tour_path(tour.id) do %>
-        <i class="nc-icon nc-ruler-pencil text-success m-2"></i>
-      <% end %>
+    <%= link_to admin_tour_path(tour.id) do %>
+      <span class="iconify nc-icon text-primary m-2"  data-icon="bx:show"></span>
+    <% end %>
+    <%= check_view_edit tour %>
     <%= link_to admin_tour_path(tour.id), method: :delete, data: {confirm: t(".delete")}, class: "text-danger", remote: true do %>
       <i class="nc-icon nc-simple-remove text-danger"></i>
     <% end %>

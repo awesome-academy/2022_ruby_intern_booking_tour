@@ -14,21 +14,21 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="card-header">
-                      <h6><span class="fa fa-calendar mr-3"></span>Arriving Date</h6>
+                      <h6><span class="fa fa-calendar mr-3"></span><%= t ".ariving_date" %></h6>
                     </div>
                     <div class="card-body">
                       <div class="row px-4">
                         <div class="col-6 col-lg-3 text-center px-0 arrival active">
-                          <div class="block py-1">Specific</div>
+                          <div class="block py-1"><%= t ".specific" %></div>
                         </div>
                         <div class="col-6 col-lg-3 text-center px-0 arrival">
-                          <div class="block py-1">After</div>
+                          <div class="block py-1"><%= t ".after" %></div>
                         </div>
                         <div class="col-6 col-lg-3 text-center px-0 arrival">
-                          <div class="block py-1">Before</div>
+                          <div class="block py-1"><%= t ".before" %></div>
                         </div>
                         <div class="col-6 col-lg-3 text-center px-0 arrival">
-                          <div class="block py-1">Between</div>
+                          <div class="block py-1"><%= t ".between" %></div>
                         </div>
                       </div>
                       <div class="row px-4 mt-3">
@@ -43,18 +43,18 @@
                   </div>
                   <div class="col-md-6">
                     <div class="card-header">
-                      <h6><span class="fa fa-star icon-star mr-3"></span>Choose hotel star</h6>
+                      <h6><span class="fa fa-star icon-star mr-3"></span><%= t ".choose_star" %></h6>
                     </div>
                     <div class="card-body">
                       <div class="row px-4 mb-2">
                         <div class="col-4 text-center px-0 hotel active">
-                          <div class="block py-1">Equals</div>
+                          <div class="block py-1"><%= t ".equals" %></div>
                         </div>
                         <div class="col-4 text-center px-0 hotel">
-                          <div class="block py-1">Less than</div>
+                          <div class="block py-1"><%= t ".less" %></div>
                         </div>
                         <div class="col-4 text-center px-0 hotel">
-                          <div class="block py-1">More than</div>
+                          <div class="block py-1"><%= t ".more" %></div>
                         </div>
                       </div>
                       <div class="row px-4">
@@ -72,26 +72,26 @@
                   </div>
                   <div class="col-md-6">
                     <div class="card-header">
-                      <h6><span class="fa fa-star icon-star mr-3"></span>Choose price</h6>
+                      <h6><span class="fa fa-star icon-star mr-3"></span><%= t ".choose_price" %></h6>
                     </div>
                     <div class="card-body">
                       <div class="row px-4 mb-2">
                         <div class="col-4 text-center px-0 hotel active">
-                          <div class="block py-1">Equals</div>
+                          <div class="block py-1"><%= t ".equals" %></div>
                         </div>
                         <div class="col-4 text-center px-0 hotel">
-                          <div class="block py-1">Less than</div>
+                          <div class="block py-1"><%= t ".less" %></div>
                         </div>
                         <div class="col-4 text-center px-0 hotel">
-                          <div class="block py-1">More than</div>
+                          <div class="block py-1"><%= t ".more" %></div>
                         </div>
                       </div>
                       <div class="row px-4">
                         <div class="col-md-6 pl-0 pr-0 pr-md-2 mb-2">
-                          <%= text_field_tag :start_price, nil, placeholder: "Your tour's start price" %>
+                          <%= text_field_tag :start_price, nil, placeholder: t(".start_date") %>
                         </div>
                         <div class="col-md-6 pl-0 pl-md-2 pr-0">
-                          <%= text_field_tag :end_price, nil, placeholder: "Your tour's end price" %>
+                          <%= text_field_tag :end_price, nil, placeholder: t(".end_date") %>
                         </div>
                       </div>
                     </div>

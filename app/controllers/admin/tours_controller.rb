@@ -3,6 +3,7 @@ class Admin::ToursController < ApplicationController
   before_action :logged_in_user
   before_action :check_admin
   before_action :load_tour, except: %i(create new index)
+  before_action :check_tour_update, only: %i(update edit)
 
   def index
     @pagy, @tours = pagy(Tour.recent_tours, items: Settings.tour.per_page_admin)
@@ -72,5 +73,14 @@ class Admin::ToursController < ApplicationController
 
   def tour_params
     params.require(:tour).permit Tour::UPDATABLE_ATTRS
+  end
+
+  def check_tour_update
+    if @tour.start_date >= Time.current
+      flash.now[:success] = t ".edit_success"
+    else
+      flash[:danger] = t ".edit_failed"
+      redirect_to admin_tours_path
+    end
   end
 end

@@ -27,6 +27,10 @@ class TourRequest < ApplicationRecord
   scope :most_recent, ->{order(created_at: :asc)}
   scope :lastest, ->{order(created_at: :desc)}
 
+  scope :by_tour_id, (lambda do |tour_id|
+    where(tour_id: tour_id) if tour_id.present?
+  end)
+
   def position
     user.tour_requests.most_recent.index(self) + 1
   end
