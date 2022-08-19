@@ -6,6 +6,26 @@
   span {
     font-size: 16px;
   }
+
+  .block {
+    border: 1px solid #000;
+  }
+
+  .block:hover {
+    background-color: #f7cb73;
+  }
+
+  .active {
+    background-color: #f7cb73;
+  }
+
+  .none {
+    display: none !important;
+  }
+
+  .display{
+    display: block !important;
+  }
 }
 
 .show_tour_request {
@@ -15,7 +35,6 @@
 
     img {
       margin: 0px;
-
     }
     .badge_details {
       display: flex;
@@ -45,9 +64,9 @@
         background-color: #f7cb73;
       }
     }
+  }
 
-    .none {
-      display: none;
-    }
+  .none {
+    display: none;
   }
 }

@@ -17,7 +17,7 @@ tour:
   image_resize: [500, 500]
   tour_per_page: 10
   default_quantity: 1
-  per_page_admin: 10
+  per_admin: 10
   height_limit: 500
   width_limit: 500
   quantity_min: 1

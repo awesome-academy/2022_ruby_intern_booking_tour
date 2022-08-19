@@ -4,6 +4,8 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 gem "erb_lint", require: false
 ruby "3.0.2"
 gem "active_storage_validations", "0.8.2"
+gem "axlsx", git: "https://github.com/randym/axlsx.git", ref: "c8ac844"
+gem "axlsx_rails"
 gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-sass", "3.4.1"
@@ -21,8 +23,9 @@ gem "mysql2", "~> 0.5.4"
 gem "pagy"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.6"
+gem "rails-controller-testing"
 gem "rails-i18n"
-gem "redis"
+gem "rubyzip", ">= 1.2.1"
 gem "sassc-rails"
 gem "sass-rails", ">= 6"
 gem "simplecov"
@@ -45,9 +48,9 @@ end
 
 group :test do
   gem "capybara", ">= 3.26"
+  gem "database_cleaner"
   gem "selenium-webdriver", ">= 4.0.0.rc1"
   gem "webdrivers"
-  gem "database_cleaner"
 end
 
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)

@@ -11,7 +11,7 @@ class Admin::TourRequestsController < ApplicationController
   end
 
   def destroy
-    if @tour_request.destroy
+    if @tour_request.rejected? && @tour_request.destroy
       flash[:success] = t ".destroy_success"
     else
       flash[:danger] = t ".destroy_danger"
@@ -22,18 +22,9 @@ class Admin::TourRequestsController < ApplicationController
   def show; end
 
   def update
-    choice = params[:sub]
-    case choice
-    when "approve"
-      @tour_request.approved!
-      success_format t ".approve_success"
-    when "reject"
-      @tour_request.rejected!
-      success_format t ".reject_success"
-    else
-      message = tour_request.errors.full_messages.to_sentence
-      danger_format message.presence
-    end
+    request_history = RequestHistory.find_by user_id: @tour_request.user_id,
+                                             tour_id: @tour_request.tour_id
+    check_request_history request_history
   end
 
   private
@@ -49,5 +40,34 @@ class Admin::TourRequestsController < ApplicationController
 
     flash[:danger] = t ".reject"
     redirect_to admin_tour_requests_path
+  end
+
+  def check_request_history request_history
+    case params[:sub]
+    when "approve"
+      @tour_request.approved!
+      if request_history.present?
+        request_history.approved!
+      else
+        create_history_request 1
+      end
+      success_format t ".approve_success"
+    when "reject"
+      @tour_request.rejected!
+      if request_history.present?
+        request_history.rejected!
+      else
+        create_history_request 2
+      end
+      success_format t ".reject_success"
+    end
+  end
+
+  def create_history_request status
+    RequestHistory.create_self @tour_request.user_id,
+                               @tour_request.tour_id,
+                               @tour_request.quantity,
+                               @tour_request.tour_price,
+                               status
   end
 end

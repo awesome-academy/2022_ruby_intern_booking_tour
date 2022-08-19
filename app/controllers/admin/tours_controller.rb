@@ -19,8 +19,8 @@ class Admin::ToursController < ApplicationController
       flash[:success] = t ".tours_create_successful"
       redirect_to admin_tours_path
     else
-      flash.now[:danger] = t ".tours_not_saved"
-      render :new
+      flash[:danger] = t ".tours_not_saved"
+      redirect_to new_admin_tour_path
     end
   end
 
@@ -29,7 +29,14 @@ class Admin::ToursController < ApplicationController
                            items: Settings.review.admin_per_page)
   end
 
-  def edit; end
+  def edit
+    if @tour.start_date > Time.zone.now
+      flash.now[:success] = t ".edit_success"
+    else
+      flash[:danger] = t ".edit_failed"
+      redirect_to admin_tours_path
+    end
+  end
 
   def update
     if @tour.update tour_params
@@ -48,6 +55,8 @@ class Admin::ToursController < ApplicationController
                            items: Settings.tour.per_page_admin, page: cur_page)
       success_format t ".destroy_success"
     else
+      @pagy, @tours = pagy(Tour.recent_tours,
+                           items: Settings.tour.per_page_admin)
       danger_format t ".destroy_danger"
     end
   end
@@ -68,6 +77,7 @@ class Admin::ToursController < ApplicationController
     @tour = Tour.find_by id: params[:id]
     return if @tour
 
+    flash[:danger] = t ".show.show_tour_failed"
     redirect_to admin_tours_path
   end
 
