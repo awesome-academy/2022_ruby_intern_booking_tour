@@ -6,7 +6,6 @@ class Tour < ApplicationRecord
   has_many :discounts, dependent: :destroy
   has_many :reviews, dependent: :destroy
   belongs_to :category
-  has_many :reviews, dependent: :destroy
   after_update :send_email_update_tour
 
   has_one_attached :image
@@ -78,9 +77,6 @@ class Tour < ApplicationRecord
 
   scope :order_by_price, (lambda do |order_by|
     order(price: order_by) if order_by.present?
-  end)
-  scope :by_rating_array, (lambda do |get_rating|
-    where(avg_rating: get_rating) if get_rating.present?
   end)
 
   def display_image
