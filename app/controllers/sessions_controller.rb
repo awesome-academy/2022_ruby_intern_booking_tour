@@ -18,6 +18,10 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 
+  def google_auth
+    @user = User.from_omniauth(request.env["omiauth.auth"])
+  end
+
   private
   def log_in_user
     log_in @user

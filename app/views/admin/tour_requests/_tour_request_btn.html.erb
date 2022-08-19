@@ -1,0 +1,10 @@
+<div id="btn_tour_request">
+  <% if tour_request.pending? %>
+    <%= link_to t(".btn__approve"), admin_tour_request_path(tour_request.id, sub: "approve") ,class:"btn btn-sm btn-success m-3", id: "approve_tour_req_btn_#{tour_request.id}" ,method: :patch, remote: true %>
+  <% elsif tour_request.rejected? %>
+    <%= link_to t(".btn__delete"), admin_tour_request_path(tour_request.id),
+      class:"btn btn-sm btn-danger m-3", method: :delete, remote: true, data: {confirm: t(".delete")} %>
+  <% else %>
+
+  <% end %>
+</div>

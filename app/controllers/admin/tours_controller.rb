@@ -78,7 +78,7 @@ class Admin::ToursController < ApplicationController
     @tour = Tour.find_by id: params[:id]
     return if @tour
 
-    flash[:danger] = t ".show.show_tour_failed"
+    flash[:danger] = t ".show_tour_failed"
     redirect_to admin_tours_path
   end
 

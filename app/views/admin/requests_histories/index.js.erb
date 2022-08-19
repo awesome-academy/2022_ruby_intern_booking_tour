@@ -3,4 +3,4 @@ $('#request_history_body').html('<%= j render @requests_histories %>');
 $('#request_history_pagy').html('<%== pagy_bootstrap_nav(@pagy) %>');
 $('#data_request_history').html('<%= hidden_field_tag "data_request_history", @requests_histories.to_json %>')
 $('#request_histories_count').html('<h4 id="request_histories_count"><%= @requests_histories.length %></h4>')
-$("#total_statistic").html('<h4 id="total_statistic"><%= t ".total" %> : <%= @sum[0].total %></h4>')
+$("#total_statistic").html('<h5 id="total_statistic"><%= t ".total" %> : <%= @sum[0].total.nil? ? 0 : @sum[0].total %></h5>')

@@ -1,5 +1,5 @@
-<div class="show_tour_request">
-  <div class="col-md-12 col-sm-12 animate-box">
+<div class="col-md-12">
+  <div class="show_tour_request">
     <div class="row">
       <div class="col-md-5">
         <div class="hotel-entry">
@@ -46,11 +46,22 @@
                 </div>
               </div>
             </form>
-            <%= link_to t(".btn__approve"), admin_tour_request_path(@tour_request.id, sub: "approve") ,class:"btn btn-sm btn-success", method: :patch, remote: true %>
-            <%= link_to t(".btn__reject"), admin_tour_request_path(@tour_request.id, sub: "reject") , class:"btn btn-sm btn-warning", method: :patch, remote: true %>
-            <%= link_to t(".btn__delete"), admin_tour_request_path(@tour_request.id) ,id: "delete_@tour_request" ,
-              class:"btn btn-sm btn-danger #{@tour_request.approved? && "none"} ", method: :delete, remote: true, data: {confirm: t(".delete")} %>
-          </div>
+           <%= render "tour_request_btn", tour_request: @tour_request %>
+           <% if @tour_request.pending? %>
+              <div id="tour_request_id">
+                <%= form_tag admin_tour_request_path(@tour_request.id, sub: "reject"),method: :patch, remote: true  do %>
+                <div class="form-group purple-border">
+                  <h4 for="exampleFormControlTextarea4"><%= t ".reason_reject" %></h4>
+                  <%= text_area_tag "content", nil, class: "form-control", rows: 8 %>
+                  <%= button_tag t(".btn__reject"), class: "btn btn-sm btn-danger m-3" %>
+                </div>
+              <% end %>
+              </div>
+           <% end %>
+          <div id = "reason_reject_title"></div>
+           <% if @tour_request.rejected? %>
+              <h4><%= t ".reason_reject" %> : <%= @tour_request.reason_reject %></h4>
+           <% end %>
         </div>
       </div>
     </div>

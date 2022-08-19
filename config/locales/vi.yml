@@ -79,125 +79,39 @@ vi:
       sign_Up_Now: " Đăng ký ngay"
       singup_description: " Đăng ký để có được các tính năng đầy đủ của trang web của chúng tôi"
       signup: " Đăng ký"
-  authorizations:
-    update:
-      activate_user_successful: "kích hoạt người dùng thành công"
-      activate_user_failed: "kích hoạt người dùng không thành công"
-    edit:
-      user_already_activated: "người dùng đã được kích hoạt"
-  users:
-    show:
-      show_user_failed: "Hiển thị danh sách user thất bại!"
-      show_user_success: "Hiển thị danh sách user thành công!"
-    update:
-      update_success: "Cập nhật thành công!"
-      update_failed: "Cập nhật thất bại!"
-    destroy:
-      destroy_success: "Xóa thành công!"
-      destroy_failed: "Xóa thất bại!"
-    form:
-      email: "Email"
-      password: "Mật khẩu"
-      password_confirm: "Xác thực mật khẩu"
-      name: "Tên"
-    edit:
-      button_text: "Chỉnh sửa"
-    check_admin:
-      permission: "Bạn không có quyền thao tác!"
-    index:
-      name: "Your name"
-      status: "Status"
-      action: "Action"
-    load_user:
-      load_success: Hiện thị user thành công
-      load_failed: Hiển thị user thất bại
-    tour:
-      find_Tours: "Tìm chuyến tham quan"
-      find_your_tour: " tìm chuyến tham quan của bạn"
-      price_Range: " Phạm vi giá"
-      price_from: " Giá từ:"
-      price_to: " Giá thành:"
-      review_Rating: " Đánh giá xếp hạng"
-      search_tour: " tìm kiếm các chuyến tham quan"
-  tours:
-    tour:
-      day: " Ngày"
-    show:
-      find_Tours: "Tìm chuyến tham quan"
-      start_date: " ngày bắt đầu"
-      end_date: " ngày cuối"
-      day: " Ngày"
-      stock: "hàng trong kho: "
-    booking:
-      quantity: "số lượng"
-      total_price: " Tổng giá"
-      submit: " Gửi đi"
-    index:
-      find_Tours: "Tìm chuyến tham quan"
-      find_your_tour: " tìm chuyến tham quan của bạn"
-      price_Range: " Phạm vi giá"
-      price_from: " Giá từ:"
-      price_to: " Giá thành:"
-      review_Rating: " Đánh giá xếp hạng"
-      search_tour: " tìm kiếm các chuyến tham quan"
-      start_date: " ngày bắt đầu"
-      end_date: " ngày cuối"
-      name: "Tên"
-      no_tours: "không có chuyến tham quan"
-  tour_requests:
-    create:
-      tour_request_success: "đặt chỗ thành công"
-      tour_request_error: "đặt phòng không thành công"
-      quantity_higher_than_stock : "số lượng cao hơn sản phẩm trong kho"
-    index:
-      your_tours: "Chuyến tham quan của bạn"
-    update:
-      quantity_higher_than_stock : "số lượng cao hơn sản phẩm trong kho"
-      tour_request_updated: "yêu cầu chuyến tham quan đã được cập nhật"
-      update_failed: "cập nhật không thành công"
-      tour_request_error: "đặt phòng không thành công"
-    destroy:
-      tour_request_cancelled: "yêu cầu tour du lịch bị hủy"
-      cancel_failed: "yêu cầu hủy chuyến du lịch không thành công"
-    tour_request:
-      quantity: "số lượng"
-      total_price: " Tổng giá"
-      start_date: " ngày bắt đầu"
-      end_date: " ngày cuối"
-      change: "thay đổi"
-      day: " Ngày"
-      stock: "hàng trong kho: "
-  reviews:
-    form:
-      comment: "Bình luận"
-      your_review: "Đánh giá của bạn"
-      review: "Đánh giá"
-    create:
-      review_success: "đánh giá thành công"
   admin:
     users:
       show:
-        show_user_failed: "Hiển thị danh sách user thất bại!"
-        show_user_success: "Hiển thị danh sách user thành công!"
+        show_user_failed: Hiển thị success_format t (."filter_success") user thất bại!
+        show_user_success: Hiển thị  user thành công!
       update:
-        update_success: "Cập nhật thành công!"
-        update_failed: "Cập nhật thất bại!"
+        update_success: Cập nhật thành công!
+        update_failed: Cập nhật thất bại!"
       destroy:
-        destroy_success: "Xóa thành công!"
-        destroy_failed: "Xóa thất bại!"
+        destroy_success: Xóa thành công!
+        destroy_failed: Xóa thất bại!
       form:
-        email: "Email"
-        password: "Mật khẩu"
-        password_confirm: "Xác thực mật khẩu"
-        name: "Tên"
+        email: Email
+        password: Mật khẩu
+        password_confirm: Xác thực mật khẩu
+        name: Tên
       edit:
-        button_text: "Chỉnh sửa"
+        button_text: Chỉnh sửa
       check_admin:
-        permission: "Bạn không có quyền thao tác!"
+        permission: Bạn không có quyền thao tác!
       index:
-        name: "Your name"
-        status: "Status"
-        action: "Action"
+        name: Your name
+        status: Status
+        action: Action
+        list_user: Danh sách người dùng
+        details: Thông tin chi tiết người dùng
+        avatar: Avatar
+        name: Tên
+        email: Email
+        role: vai trò
+        action: Hoạt động
+      user:
+        delete: Xóa
     tours:
       form:
         name: Tên tour
@@ -208,8 +122,13 @@ vi:
         price: Giá
         start_date: Ngày bắt đầu
         end_date: Ngày kết thúc
+        category: Category
+        description: Chi tiết
       edit:
         button_text: Sửa
+        edit_success: Vào form edit thành công
+        edit_danger: Vào form edit thất bại
+        edit_failed: Tour đã bắt đầu, không thể chỉnh sửa
       new:
         button_text: Thêm
       create:
@@ -218,41 +137,138 @@ vi:
       show:
         show_tour_success: Hiển thị tour chi tiết thành công!
         show_tour_failed: Hiển thị tour chi tiết thất bại!
+        name: Tên
+        price: Giá
+        ratings: Ratings
+        start_date: Ngày bắt đầu
+        end_date: Ngày kết thúc
+        category: Danh mục
+        stock: Stock
+        action: Hoạt động
+        description: Chi tiết
       update:
         update_success: Cập nhật thành công!
         update_failed: Cập nhật thất bại!
       destroy:
         destroy_success: Xóa thành công!
         destroy_danger: Xóa thất bại!
+      navbar:
+        name: Tên chuyến tham quan của bạn
+        name_asc: Tên Tăng dần
+        name_desc: Tên Giảm dần
+        price_asc: Giá tăng dần
+        price_desc: Giá giảm dần
+      search_form:
+        name: tên
+        date: Ngày đến
+        specific: Cụ thể
+        after: Sau
+        before: Trước đây
+        between: Giữa
+        equals: Bằng
+        less: ít hơn
+        more: nhiều hơn
+        select_star: Chọn ngôi sao của bạn
+        start_price: Giá khởi điểm cho chuyến tham quan của bạn
+        end_price: Giá kết thúc chuyến tham quan của bạn
+        sort: Sắp xếp
+        name_asc: Tên Tăng dần
+        name_desc: Tên Giảm dần
+        price_asc: Giá tăng dần
+        price_desc: Giá giảm dần
+        filter: Bộ lọc
+        choose_price: Chọn giá
       tour:
         night: /đêm
         reviews: reivews
         delete: Xóa
+      index:
+        name: Tên
+        price: Giá
+        ratings: Ratings
+        start_date: Ngày bắt đầu
+        end_date: Ngày kết thúc
+        category: Category
+        stock: Stock
+        action: Hành động
     review_ratings:
         title: Average user rating
         title_breakdown: Rating breakdown
-    reviews:
-      review:
-        confirm: Xác thực
     tour_requests:
+      update:
+        approve_success: Phê duyệt thành công
+        reject_success: ' Từ chối thành công'
+        sub_1: ' đã chấp thuận thành công chuyến tham quan này'
+        sub_2: ' đã từ chối thành công chuyến tham quan này'
+        sub_3: ' cho email'
+        socket_success: ' Socket thành công'
+        reason_reject: Lí do từ chối
+      index:
+        name: Tên tour
+        email: Email
+        price: Giá
+        quantity: Số lượng
+        total_price: Tổng giá
+        status: Trạng thái
+        action: Hoạt động
       destroy:
         destroy_success: Xóa thành công
         destroy_danger: Xóa thất bại
       tour_request:
         delete: Xóa
-        userName: Tên người dùng
-        userEmail: Email người dùng
-        startDate: Ngày bắt đầu
-        endDate: Ngày kết thúc
-        btn__approve: Chấp thuận
+        btn__approve: Đồng ý
         btn__reject: Từ chối
         btn__delete: Xóa
       badge_request:
         badge__pending: Đang chờ xác thực
         badge__approve: Chấp thuận
         badge__rejected: Từ chối
-
-
+      badge_table:
+        badge__pending: Đang chờ xác thực
+        badge__approve: Chấp thuận
+        badge__rejected: Từ chối
+      show:
+        userName: User Name
+        userEmail: Email
+        startDate: Ngày bắt đầu
+        endDate: Ngày kết thúc
+        reviews: Reviews
+        night: Đêm
+        btn__approve: Chấp thuận
+        btn__reject: Từ chối
+        btn__delete: Xóa
+        reason_reject: Lí do từ chối
+        placeholder: Lí do của admin
+      tour_request_btn:
+        btn__approve: Chấp thuận
+        btn__reject: Từ chối
+        btn__delete: Xóa
+      modal_request:
+        btn__reject: Từ chối
+        btn__close: Đóng
+        reason_reject: Lí do từ chối
+    reviews:
+      destroy:
+        destroy_success: Xóa thành công
+        destroy_danger: Xóa thất bại
+    requests_histories:
+      index:
+        date: Ngày đến
+        specific: ' Riêng'
+        after: ' Sau'
+        before: ' Trước'
+        between: ' Giữa'
+        filter: ' Lọc'
+        name: ' Tên của chuyến tham quan'
+        email: ' E-mail'
+        price: ' Giá bán'
+        quantity: ' Số lượng'
+        count: ' Đếm'
+        total_price: ' Tổng giá'
+        total: ' Tổng cộng'
+        excel: ' In Excel!'
+        result: Kết quả
+        filter_success: Filter thành công
   tour_request_mailer:
     auth_tour_request:
       subject: Thông tin chi tiết tour request

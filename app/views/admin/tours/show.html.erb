@@ -29,10 +29,6 @@
                   <h6><%= @tour.price %><br>
                     <small><%= t ".price" %></small></h6>
                 </div>
-                <div class="col-lg-3 mr-auto">
-                  <h6><br>
-                    <small><%= t ".count" %></small></h6>
-                </div>
               </div>
             </div>
           </div>
@@ -44,19 +40,19 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label>Name</label>
+                  <label><%= t "name" %></label>
                   <h6><%= @tour.name %></h6>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label>Price</label>
+                  <label><%= t ".price" %></label>
                   <h6><%= @tour.price %></h6>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Category</label>
+                  <label for="exampleInputEmail1"><%= t ".category" %></label>
                   <h6><%= @tour.category_name %></h6>
                 </div>
               </div>
@@ -64,14 +60,14 @@
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  <label>Start date</label>
-                  <%= date_field_tag :start_date,nil, class: "form-control", placeholder: "Your Price" %>
+                  <label><%= t ".start_date" %></label>
+                  <%= date_field_tag :start_date,nil, class: "form-control", placeholder: t(".start_date") %>
                 </div>
               </div>
               <div class="col-md-6 pl-1">
                 <div class="form-group">
-                  <label>End date</label>
-                  <%= date_field_tag :end_date, nil, class: "form-control", placeholder: "Your Price" %>
+                  <label><%= t ".end_date" %></label>
+                  <%= date_field_tag :end_date, nil, class: "form-control", placeholder: t(".end_date") %>
                 </div>
               </div>
             </div>
@@ -79,7 +75,7 @@
               <% if @tour.present? %>
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Avg Ragings</label>
+                    <label><%= t ".ratings" %></label>
                     <div>
                       <%= sanitize render_star(@tour.avg_rating), attributes: %w(class data-icon) %>
                     </div>
@@ -90,7 +86,7 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label>Description</label>
+                  <label><%= t ".description" %></label>
                   <h6><%= @tour.description %></h6>
                 </div>
               </div>
@@ -106,7 +102,7 @@
         </div>
       </div>
     </div>
-          <%= @tour.reviews.count %> <%= t ".reviews" %>
+    <%= @tour.reviews.count %> <%= t ".reviews" %>
   </p>
   <%= render "admin/reviews/review_ratings", reviews: @reviews %>
   <%= render "admin/reviews/review_list", reviews: @reviews %>

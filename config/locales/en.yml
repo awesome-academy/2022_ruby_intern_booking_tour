@@ -109,6 +109,13 @@ en:
         name: "Your name"
         status: "Status"
         action: "Action"
+        list_user: List Users
+        details: User's detail
+        avatar: Avatar
+        name: Name
+        email: Email
+        role: Role
+        action: Actions
       user:
         delete: Delete
     tours:
@@ -121,8 +128,12 @@ en:
         price: Price
         start_date: Start date
         end_date: End date
+        category: Category
+        description: description
       edit:
         button_text: Edit
+        edit_success: Form edit success
+        edit_danger: Form edit danger
       new:
         button_text: Add
       create:
@@ -131,12 +142,46 @@ en:
       show:
         show_tour_success: Show tour successfully!
         show_tour_failed: Show tour failed!
+        name: Name
+        price: Price
+        ratings: Ratings
+        start_date: Start Date
+        end_date: End Date
+        category: Category
+        stock: Stock
+        action: Action
+        description: Description
       update:
         update_success: Update successfully!
         update_failed: Update field!
       destroy:
         destroy_success: Destroy successfully!
         destroy_danger: Destroy field!
+      navbar:
+        name: Your tour's name
+        name_asc: Name Ascending
+        name_desc: Name Descending
+        price_asc: Price Ascending
+        price_desc: Price Descending
+      search_form:
+        name: Name
+        date: Arriving Date
+        specific: Specific
+        after: After
+        before: Before
+        between: Between
+        equals: Equals
+        less: less than
+        more: more than
+        choose_star: Choose your star
+        start_price: Your tour's start price
+        end_price: Your tour's end price
+        sort: Sort
+        name_asc: Name Ascending
+        name_desc: Name Descending
+        price_asc: Price Ascending
+        price_desc: Price Descending
+        filter: Filter
       tour:
         night: /night
         reviews: reviews
@@ -151,10 +196,35 @@ en:
         and: AND
         cancel: Cancel
         filter: Apply Filter
+      index:
+        name: Name
+        price: Price
+        ratings: Ratings
+        start_date: Start Date
+        end_date: End Date
+        category: Category
+        stock: Stock
+        action: Action
     review_ratings:
         title: Average user rating
         title_breakdown: Rating breakdown
     tour_requests:
+      update:
+        approve_success: Approve success
+        reject_success: Reject success
+        sub_1: have approved successfully this tour
+        sub_2: have rejected successfully this tour
+        sub_3: for email
+        socket_success: Socket successfully
+        reason_reject: Reason reject
+      index:
+        name: Name's tour
+        email: Email
+        price: Price
+        quantity: Quantity
+        total_price: Total price
+        status: Status
+        action: Action
       destroy:
         destroy_success: Destroy successfully
         destroy_danger: Destroy failed
@@ -167,11 +237,53 @@ en:
         badge__pending: Pending
         badge__approve: Approve
         badge__rejected: Reject
+      badge_table:
+        badge__pending: Pending
+        badge__approve: Approve
+        badge__rejected: Reject
+      show:
+        userName: User Name
+        userEmail: Email
+        startDate: Start Date
+        endDate: End Date
+        reviews: Reviews
+        night: Night
+        btn__approve: Approve
+        btn__reject: Reject
+        btn__delete: Delele
+        reason_reject: Reason reject
+        placeholder: Your reason
+      tour_request_btn:
+        btn__approve: Approve
+        btn__reject: Reject
+        btn__delete: Delele
+      modal_request:
+        btn__reject: Reject
+        btn__close: Close
+        reason_reject: Reason Reject
     reviews:
       destroy:
         destroy_success: Destroy successfully
         destroy_danger: Destroy failed
-
+      review_ratings:
+    requests_histories:
+      index:
+        date: Arriving Date
+        specific: Specific
+        after: After
+        before: Before
+        between: Between
+        filter: Filter
+        name: Tour's name
+        email: Email
+        price: Price
+        quantity: Quantity
+        count: Count
+        total_price: Total price
+        total: Total
+        excel: Excel Print!
+        result: Result
+        filter_success: Filter successfully
   tour_request_mailer:
     auth_tour_request:
       subject: Tour request details
