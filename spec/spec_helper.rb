@@ -34,5 +34,9 @@ class SimpleCov::Formatter::MergedFormatter
   end
 end
 
+def log_in user
+  request.session[:user_id] = user.id
+end
+
 SimpleCov.formatter = SimpleCov::Formatter::MergedFormatter
 SimpleCov.start "rails"

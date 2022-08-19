@@ -31,12 +31,14 @@ class ApplicationController < ActionController::Base
   def success_format title
     respond_to do |format|
       format.js{flash[:success] = title}
+      format.html
     end
   end
 
   def danger_format title
     respond_to do |format|
       format.js{flash[:danger] = title}
+      format.html
     end
   end
 

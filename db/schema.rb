@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_15_085926) do
+ActiveRecord::Schema.define(version: 2022_08_18_021643) do
 
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
@@ -55,9 +55,20 @@ ActiveRecord::Schema.define(version: 2022_08_15_085926) do
     t.index ["tour_id"], name: "index_discounts_on_tour_id"
   end
 
+  create_table "notifications", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "content"
+    t.integer "status", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "tour_requests_id"
+    t.index ["tour_requests_id"], name: "index_notifications_on_tour_requests_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "request_histories", charset: "utf8mb3", force: :cascade do |t|
     t.integer "quantity"
-    t.decimal "total_price", precision: 10
+    t.decimal "price", precision: 10
     t.integer "status", default: 0
     t.bigint "user_id", null: false
     t.bigint "tour_id", null: false
@@ -86,6 +97,7 @@ ActiveRecord::Schema.define(version: 2022_08_15_085926) do
     t.bigint "tour_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "reason_reject"
     t.index ["tour_id"], name: "index_tour_requests_on_tour_id"
     t.index ["user_id"], name: "index_tour_requests_on_user_id"
   end
@@ -111,6 +123,9 @@ ActiveRecord::Schema.define(version: 2022_08_15_085926) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "provider"
+    t.string "uid"
+    t.datetime "oauth_expires"
     t.boolean "activated", default: false
     t.datetime "activated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -119,6 +134,8 @@ ActiveRecord::Schema.define(version: 2022_08_15_085926) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "discounts", "tours"
+  add_foreign_key "notifications", "tour_requests", column: "tour_requests_id"
+  add_foreign_key "notifications", "users"
   add_foreign_key "request_histories", "tours"
   add_foreign_key "request_histories", "users"
   add_foreign_key "reviews", "tours"
