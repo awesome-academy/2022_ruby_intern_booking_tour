@@ -23,6 +23,10 @@ RSpec.configure do |config|
   FactoryBot.find_definitions
 end
 
+def log_in user
+  request.session[:user_id] = user.id
+end
+
 class SimpleCov::Formatter::MergedFormatter
   def format(result)
     SimpleCov::Formatter::HTMLFormatter.new.format(result)
