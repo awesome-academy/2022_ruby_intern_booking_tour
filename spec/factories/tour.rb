@@ -4,8 +4,8 @@ FactoryBot.define do
     description{"abc"}
     start_date{Time.zone.parse('2022-09-11 21:00')}
     end_date{Time.zone.parse('2022-10-11 21:00')}
-    price{1}
-    stock{1}
+    price{11}
+    stock{5}
     avg_rating{1}
   end
 
@@ -14,8 +14,8 @@ FactoryBot.define do
     description{"abc"}
     start_date{Time.zone.parse('2022-08-11 21:00')}
     end_date{Time.zone.parse('2022-10-11 21:00')}
-    price{1}
-    stock{1}
+    price{10}
+    stock{6}
     avg_rating{1}
   end
 end

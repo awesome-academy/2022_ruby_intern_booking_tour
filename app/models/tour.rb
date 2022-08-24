@@ -1,6 +1,6 @@
 class Tour < ApplicationRecord
-  UPDATABLE_ATTRS = %i(name description price image start_date end_date
-                       avg_rating category_id).freeze
+  UPDATABLE_ATTRS = %i(name description price start_date end_date
+                       avg_rating category_id stock).freeze
 
   has_many :tour_requests, dependent: :destroy
   has_many :discounts, dependent: :destroy

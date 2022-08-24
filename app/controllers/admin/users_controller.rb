@@ -46,11 +46,11 @@ class Admin::UsersController < ApplicationController
   end
 
   def load_user
+    flash[:success] = t "admin.users.show.show_user_success"
     @user = User.find_by id: params[:id]
-    flash[:success] = t ".show_user_success"
     return if @user
 
-    flash[:danger] = t ".show_user_failed"
+    flash[:danger] = t "admin.users.show.show_user_failed"
     redirect_to admin_users_path
   end
 

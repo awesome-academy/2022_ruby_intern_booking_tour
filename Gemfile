@@ -21,8 +21,10 @@ gem "mysql2", "~> 0.5.4"
 gem "pagy"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.6"
+gem "rails-controller-testing"
 gem "rails-i18n"
-gem "redis"
+gem "rubyzip", ">= 1.2.1"
+# gem "redis"
 gem "sassc-rails"
 gem "sass-rails", ">= 6"
 gem "simplecov"
@@ -45,9 +47,9 @@ end
 
 group :test do
   gem "capybara", ">= 3.26"
+  gem "database_cleaner"
   gem "selenium-webdriver", ">= 4.0.0.rc1"
   gem "webdrivers"
-  gem "database_cleaner"
 end
 
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
