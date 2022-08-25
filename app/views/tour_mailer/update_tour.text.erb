@@ -1,0 +1,21 @@
+<h1><%= t ".title" %></h1>
+<p><%= t ".hi" %> <%= @tour_request.user_name %>,</p>
+<p>
+  <%= t ".content" %>
+</p>
+<p>
+  $<%= @tour_request.tour_price %><small> <%= t ".night" %></small></p>
+<h3><a><%= @tour_request.tour_name %></a></h3>
+<span><%= @tour_request.tour.category_name %></span>
+<p>
+  <%= @tour_request.tour_description %>
+</p>
+<p><%= t ".userName" %></p>
+<%= text_field :name, "", class: "form-control", value: @tour_request.user_name, disabled: true %>
+<p><%= t ".userEmail" %></p>
+<%= text_field :email, "", class: "form-control", value: @tour_request.user_email, disabled: true %>
+<p><%= t ".startDate" %></p>
+<%= date_field :startDate, "", class: "form-control", value: @tour_request.tour_start_date.strftime("%F"), disabled: true %>
+<p><%= t ".endDate" %></p>
+<%= date_field :endDate, "", class: "form-control", value: @tour_request.tour_end_date.strftime("%F"), disabled: true %>
+<%= link_to t(".details"), tour_requests_url(id: @tour_request.user.id) %>

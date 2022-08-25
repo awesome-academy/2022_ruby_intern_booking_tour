@@ -1,6 +1,6 @@
 class TourRequest < ApplicationRecord
   enum status: {pending: 0, approved: 1, rejected: 2}
-  after_create :subtract_stock, :send_tour_request_email, :broadcast_message
+  after_create :subtract_stock, :send_tour_request_email
   around_update :modify_stock
   after_update :send_tour_request_email
   before_destroy :check_status
@@ -16,7 +16,7 @@ class TourRequest < ApplicationRecord
   UPDATABLE_ATTRS = %i(user_id tour_id quantity total_price).freeze
 
   validate :check_valid_date
-  validate :check_status, on: :update
+  # validate :check_status, on: :update
   validates :status, presence: true
   validates :quantity, :total_price, presence: true,
                                      numericality: {

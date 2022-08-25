@@ -1,0 +1,32 @@
+.navbar_admin {
+  .alert {
+    width: 400px;
+    gap: 16px;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 20%;
+  }
+
+  #notifications_admin {
+    height: 70vh;
+    overflow-y: auto;
+  }
+
+  .text_black{
+    color: #000
+  }
+
+  .text_white{
+    color: #fff
+  }
+
+  .none{
+    display: none;
+  }
+
+  .display{
+    display: inline-block;
+  }
+}

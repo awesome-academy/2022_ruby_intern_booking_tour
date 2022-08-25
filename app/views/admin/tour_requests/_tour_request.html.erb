@@ -6,18 +6,14 @@
   <td><%=  tour_request.quantity %></td>
   <td><%= tour_request.total_price%></td>
   <td>
-  <%= render "badge_table", tour_request: tour_request %>
+    <%= render "badge_table", tour_request: tour_request %>
   </td>
   <td>
-    <%= link_to edit_admin_tour_request_path(tour_request.id) do %>
-      <i class="nc-icon nc-ruler-pencil text-success m-2"></i>
-    <% end %>
-    <%= link_to admin_tour_request_path(tour_request.id) do %>
-      <span class="iconify nc-icon text-primary m-2"  data-icon="bx:show"></span>
-    <% end %>
-    <%= link_to t(".btn__approve"), admin_tour_request_path(tour_request.id, sub: "approve") ,class:"btn btn-sm btn-success", method: :patch, remote: true %>
-    <%= link_to t(".btn__reject"), admin_tour_request_path(tour_request.id, sub: "reject") , class:"btn btn-sm btn-warning", method: :patch, remote: true %>
-    <%= link_to t(".btn__delete"), admin_tour_request_path(tour_request.id) ,id: "delete_tour_request" ,
-              class:"btn btn-sm btn-danger #{tour_request.approved? && "none"} ", method: :delete, remote: true, data: {confirm: t(".delete")} %>
+    <div class="d-flex">
+      <%= link_to admin_tour_request_path(tour_request.id) do %>
+        <span class="iconify nc-icon text-primary m-2"  data-icon="bx:show"></span>
+      <% end %>
+      <%= render "tour_request_btn", tour_request: tour_request %>
+    </div>
   </td>
 </tr>

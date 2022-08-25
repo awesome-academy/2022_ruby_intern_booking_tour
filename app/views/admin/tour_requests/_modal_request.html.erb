@@ -1,0 +1,19 @@
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><%= t ".reason_reject" %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_tag admin_tour_request_path(tour_request.id, sub: "reject"),method: :patch, remote: true do %>
+        <%= text_area_tag "content", nil, class: "form-control p-4" %>
+      <div class="modal-footer">
+        <%= button_tag t(".btn__reject"), class: "btn btn-sm btn-warning m-3" %>
+        <button type="button" class="btn btn-sm btn-danger m-3" data-dismiss="modal"><%= t ".btn__close" %></button>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
