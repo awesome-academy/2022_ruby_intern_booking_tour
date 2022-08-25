@@ -1,13 +1,5 @@
 RSpec.describe User, type: :model do
 
-  let(:user_1){
-    FactoryBot.create :user_example1
-  }
-
-  let(:user_2){
-    FactoryBot.create :user_example2,
-  }
-
   describe "presence" do
     it { should validate_presence_of(:name)}
     it { should validate_presence_of(:email)}
@@ -21,8 +13,20 @@ RSpec.describe User, type: :model do
   end
 
   describe "check scope" do
+    let!(:user_1){
+      FactoryBot.create :user_example1
+    }
+
+    let!(:user_2){
+      FactoryBot.create :user_example2
+    }
+
+    let!(:admin){
+      FactoryBot.create :admin
+    }
+
     it "orders by created at" do
-      expect(User.lastest).to eq([user_2, user_1])
+      expect(User.lastest).to eq([admin, user_2, user_1])
     end
   end
 end

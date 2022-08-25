@@ -30,7 +30,7 @@ module ToursHelper
   def check_view_edit tour
     return unless tour.start_date >= Time.current
 
-    link_to '<i class="nc-icon nc-ruler-pencil text-success m-2"></i>',
+    link_to "<i class='nc-icon nc-ruler-pencil text-success m-2'></i>",
             edit_admin_tour_path(tour.id)
   end
 end

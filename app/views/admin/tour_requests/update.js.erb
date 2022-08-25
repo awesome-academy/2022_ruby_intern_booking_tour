@@ -1,7 +1,10 @@
 $('#flash').html('<%= j render "layouts/flash_messages", flash: flash %> ');
-$('#badge_request_tbl').html('<%= j render "badge_table", tour_request: @tour_request %>');
+$('#badge_request_<%= @tour_request.id %>').html('<%= j render "badge_request", tour_request: @tour_request %>');
+$('.badge_request_tbl_<%= @tour_request.id %>').html('<%= j render "badge_table", tour_request: @tour_request %>');
 <% if @tour_request.rejected? %>
-  $('#delete_tour_request').removeClass("none")
+  $('#delete_tour_request_<%= @tour_request.id %>').removeClass("none")
+  $('#delete_show_tour_request_<%= @tour_request.id %>').removeClass("none")
 <% else %>
-  $('#delete_tour_request').addClass("none")
+  $('#delete_tour_request_<%= @tour_request.id %>').addClass("none")
+  $('#delete_show_tour_request_<%= @tour_request.id %>').addClass("none")
 <% end %>

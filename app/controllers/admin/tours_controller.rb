@@ -30,7 +30,14 @@ class Admin::ToursController < ApplicationController
                            items: Settings.review.admin_per_page)
   end
 
-  def edit; end
+  def edit
+    if @tour.start_date > Time.zone.now
+      flash.now[:success] = t ".edit_success"
+    else
+      flash[:danger] = t ".edit_failed"
+      redirect_to admin_tours_path
+    end
+  end
 
   def update
     if @tour.update tour_params

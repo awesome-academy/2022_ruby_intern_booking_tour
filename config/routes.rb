@@ -16,6 +16,8 @@ Rails.application.routes.draw do
       resources :reviews
       resources :tour_requests
       resources :filter_tours, only: %i(index)
+      resources :requests_histories
+      get "/axlsx_index", to: "axlsx#index"
     end
     get "/authorization/:id", to: "authorizations#edit", as: :authorization
     post "/authorization/:id", to: "authorizations#update",

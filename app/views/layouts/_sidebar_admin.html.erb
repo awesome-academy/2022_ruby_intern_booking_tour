@@ -18,6 +18,9 @@
   <div class="sidebar-wrapper">
     <ul class="nav">
       <li>
+        <%= link_to "Dashboard", admin_tour_requests_path %>
+      </li>
+      <li>
         <%= link_to t(".users"), admin_users_path %>
       </li>
       <li>
@@ -25,6 +28,9 @@
       </li>
       <li>
         <%= link_to t(".requests"), admin_tour_requests_path %>
+      </li>
+      <li>
+        <%= link_to "Statistic", admin_requests_histories_path %>
       </li>
       <li>
         <%= link_to t(".log_out"), logout_path, method: :delete %>
