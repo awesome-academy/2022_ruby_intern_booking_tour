@@ -10,11 +10,23 @@ class TourRequestsController < ApplicationController
   def create
     tour_request =
       TourRequest.create tour_requests_params.merge(user_id: current_user.id)
-
     if tour_request.persisted?
       find_tour
       tour_request_success
-      broadcast_message current_user, tour_request
+      # broadcast_message current_user, tour_request
+      content = "#{current_user.email} đã đặt tour request thành công!"
+      type = 1
+      notification = Notification.new content: content,
+                                      tour_request_id: tour_request.id
+      notification.save!
+      AdminBoardcastJob.perform_later(
+        {
+          data: content,
+          type: type,
+          tour_request: tour_request,
+          notification: notification
+        }
+      )
     else
       tour_request_failed tour_request
     end
@@ -25,6 +37,17 @@ class TourRequestsController < ApplicationController
     if @tour_request.update tour_requests_params
       load_tour_requests_jump tour_request_pos, 0
       tour_request_updated
+      content = "#{current_user.email} đã cập nhật tour request thành công!"
+      type = 1
+      notification = Notification.new content: content,
+                                      tour_request_id: @tour_request.id
+      notification.save!
+      AdminBoardcastJob.perform_later({
+                                        data: content,
+                                        type: type,
+                                        notification: notification,
+                                        tour_request: @tour_request
+                                      })
     else
       @tour_request.reload
       tour_request_update_failed
