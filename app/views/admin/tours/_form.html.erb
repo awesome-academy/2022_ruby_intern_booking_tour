@@ -13,8 +13,9 @@
                   <div class="row form-group">
                     <div class="col-md-12">
                       <%= f.label t(".image") %>
-                      <%= f.file_field :image, accept: Settings.image.type %>
+                      <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
                       <%= image_tag @tour.display_image, class: "hotel-img tour__preview"  if @tour.image.attached? %>
+                      <img class="tour__preview" />
                     </div>
                   </div>
                 </div>
@@ -24,7 +25,7 @@
           <div class="col-md-8">
             <div class="card card-user">
               <div class="card-header">
-                <h5 class="card-title"><%= t ".edit" %></h5>
+                <h5 class="card-title"><%= yield(:button_text) %></h5>
               </div>
               <div class="card-body">
                 <form>
@@ -32,7 +33,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label><%= t ".name" %></label>
-                        <%= f.text_field :name, class: "form-control", placeholder: t(".name") %>
+                        <%= f.text_field :name, class: "form-control", placeholder:  t(".name") %>
                       </div>
                     </div>
                     <div class="col-md-12">
@@ -43,7 +44,7 @@
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label for="exampleInputEmail1"><%= t ".email" %></label>
+                        <label for="exampleInputEmail1"><%= t ".category" %></label>
                         <%= f.select :category_id, load_category,  {}, {class: "form-control"} %>
                       </div>
                     </div>
@@ -52,13 +53,13 @@
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label><%= t ".start_date" %></label>
-                        <%= f.date_field :start_date, class: "form-control" %>
+                        <%= f.date_field :start_date, class: "form-control", placeholder: t(".start_date") %>
                       </div>
                     </div>
                     <div class="col-md-6 pl-1">
                       <div class="form-group">
                         <label><%= t ".end_date" %></label>
-                        <%= f.date_field :end_date, class: "form-control" %>
+                        <%= f.date_field :end_date, class: "form-control", placeholder: t(".end_date") %>
                       </div>
                     </div>
                   </div>

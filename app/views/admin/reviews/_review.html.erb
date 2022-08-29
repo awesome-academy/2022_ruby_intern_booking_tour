@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="col-sm-2">
-    <%= link_to admin_review_path(review), method: :delete, data: {confirm: t(".confirm")}, class: "text-danger" do %>
+    <%= link_to admin_review_path(review), method: :delete, data: {confirm: t(".confirm")}, class: "text-danger", remote: true do %>
       <span class="iconify" data-icon="bi:trash"></span>
     <% end %>
   </div>

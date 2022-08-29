@@ -6,7 +6,8 @@ class Tour < ApplicationRecord
   has_many :discounts, dependent: :destroy
   has_many :reviews, dependent: :destroy
   belongs_to :category
-  after_update :send_email_update_tour
+  has_many :reviews, dependent: :destroy
+  # after_update :send_email_update_tour
 
   has_one_attached :image
 
@@ -68,6 +69,14 @@ class Tour < ApplicationRecord
     where(avg_rating: get_rating) if get_rating.present?
   end)
 
+  scope :select_col, (lambda do |col|
+    select(col) if col.present?
+  end)
+
+  scope :join_tbl, (lambda do |tbl|
+    joins(tbl) if col.present?
+  end)
+
   scope :by_start_price, (lambda do |start_price|
     where("price >= ?", start_price) if start_price.present?
   end)
@@ -86,6 +95,9 @@ class Tour < ApplicationRecord
 
   scope :order_by_price, (lambda do |order_by|
     order(price: order_by) if order_by.present?
+  end)
+  scope :by_rating_array, (lambda do |get_rating|
+    where(avg_rating: get_rating) if get_rating.present?
   end)
 
   scope :select_col, (lambda do |col|

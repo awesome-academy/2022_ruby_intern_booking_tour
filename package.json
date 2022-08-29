@@ -8,6 +8,7 @@
     "@rails/webpacker": "5.4.3",
     "bootstrap": "3.3.5",
     "jquery": "^3.6.0",
+    "moment": "^2.29.4",
     "rails-erb-loader": "^5.5.2",
     "toastr": "^2.1.4",
     "turbolinks": "^5.2.0",
@@ -16,13 +17,13 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-clean": "^0.4.0",
     "gulp-install": "^1.1.0",
+    "gulp-open": "^3.0.1",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-open": "^3.0.1"
+    "webpack-dev-server": "^3"
   }
 }

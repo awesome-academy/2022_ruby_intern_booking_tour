@@ -3,36 +3,36 @@
     <a href="https://www.creative-tim.com" class="simple-text logo-mini">
       <div class="logo-image-small">
       </div>
-      <!-- <p>CT</p> -->
     </a>
     <a
             href="https://www.creative-tim.com"
             class="simple-text logo-normal"
           >
       Creative Tim
-      <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
     </a>
   </div>
   <div class="sidebar-wrapper">
     <ul class="nav">
       <li>
-        <%= link_to "Dashboard", admin_tour_requests_path %>
       </li>
       <li>
+        <i class="nc-icon nc-layout-11"></i>
         <%= link_to t(".users"), admin_users_path %>
       </li>
       <li>
+        <i class="nc-icon nc-pin-3"></i>
         <%= link_to t(".tours"), admin_tours_path %>
       </li>
       <li>
+        <i class="nc-icon nc-bell-55"></i>
         <%= link_to t(".requests"), admin_tour_requests_path %>
       </li>
       <li>
+        <i class="nc-icon nc-single-02"></i>
         <%= link_to "Statistic", admin_requests_histories_path %>
       </li>
       <li>
+        <i class="nc-icon nc-tile-56"></i>
         <%= link_to t(".log_out"), logout_path, method: :delete %>
       </li>
     </ul>

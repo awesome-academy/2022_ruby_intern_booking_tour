@@ -51,6 +51,7 @@
           <h2><%= t ".sign_Up_Now" %></h2>
           <p><%= t ".singup_description" %></p>
           <%= link_to t(".signup"), signup_path, class: "btn btn-primary" %>
+           <%= link_to "Đăng nhập bằng google!", user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary", target: "_blank" %>
         </div>
       </div>
     </div>

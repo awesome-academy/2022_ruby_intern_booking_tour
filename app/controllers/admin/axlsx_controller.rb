@@ -2,7 +2,7 @@ class Admin::AxlsxController < ApplicationController
   require "axlsx"
 
   def index
-    data = JSON.parse(params[:data])
+    data = JSON.parse(params[:data_request_history])
     send_xls data
   end
 
