@@ -3,21 +3,21 @@
     <%= form_tag admin_requests_histories_path, method: :get, remote: true do %>
       <div class="card">
         <div class="card-header">
-          <h6><span class="fa fa-calendar mr-3"></span>Arriving Date</h6>
+          <h6><span class="fa fa-calendar mr-3"></span><%= t ".date" %></h6>
         </div>
         <div class="card-body">
           <div class="row px-4">
             <div class="col-6 col-lg-3 text-center px-0 arrival specific active">
-              <div class="block py-1">Specific</div>
+              <div class="block py-1"><%= t ".specific" %></div>
             </div>
             <div class="col-6 col-lg-3 text-center px-0 arrival after">
-              <div class="block py-1">After</div>
+              <div class="block py-1"><%= t ".after" %></div>
             </div>
             <div class="col-6 col-lg-3 text-center px-0 arrival before">
-              <div class="block py-1">Before</div>
+              <div class="block py-1"><%= t ".before" %></div>
             </div>
             <div class="col-6 col-lg-3 text-center px-0 arrival between">
-              <div class="block py-1">Between</div>
+              <div class="block py-1"><%= t ".between" %></div>
             </div>
             <%= hidden_field_tag :choices, "specific" %>
           </div>
@@ -34,20 +34,20 @@
               <%= date_field_tag :specific_date, nil, class: "form-control m-3" %>
             </div>
           </div>
-          <%= button_tag "Filter"  %>
+          <%= button_tag t(".filter"), class: "btn btn-success" %>
         </div>
       </div>
     <% end %>
-    <h4 id="request_histories_count"><%= @requests_histories.length %></h4>
+    <h5 id="request_histories_count"><%= t(".result")%>: <%= @requests_histories.length %></h5>
     <table class="table table-bordred table-striped">
       <thead>
         <th><input type="checkbox" id="checkall" /></th>
-        <th>Tour's name</th>
-        <th>Email</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>count</th>
-        <th>Total price</th>
+        <th><%= t ".name" %></th>
+        <th><%= t ".email" %></th>
+        <th><%= t ".price" %></th>
+        <th><%= t ".quantity" %></th>
+        <th><%= t ".count" %></th>
+        <th><%= t ".total_price" %></th>
       </thead>
       <tbody id="request_history_body">
         <%= render @requests_histories %>
@@ -58,7 +58,7 @@
     </div>
     <%= form_tag(admin_axlsx_index_path, method: :get) do %>
       <%= hidden_field_tag "data_request_history", @requests_histories.to_json %>
-      <%= submit_tag "Excel_By_Gem_Axlsx" %>
+      <%= submit_tag t(".excel"), class: "btn btn-success" %>
     <% end %>
     <div id="request_history_pagy">
       <%== pagy_bootstrap_nav @pagy %>

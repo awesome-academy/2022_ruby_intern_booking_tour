@@ -24,6 +24,7 @@ module TourRequestsHelper
       class_name = "badge-danger"
       i18n_title = ".badge__rejected"
     end
-    "<span class='badge #{class_name}'>#{t(i18n_title)}</span>"
+    "<span class='badge #{class_name} badge_request_tbl_#{tour_request.id}'>
+    #{t(i18n_title)}</span>"
   end
 end

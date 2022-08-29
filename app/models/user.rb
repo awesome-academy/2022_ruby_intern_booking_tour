@@ -1,10 +1,13 @@
 class User < ApplicationRecord
   enum role: {admin: 0, user: 1}
 
+  devise :omniauthable, omniauth_providers: [:google_oauth2]
+
   before_save :downcase_email
 
   has_many :reviews, dependent: :destroy
   has_many :tour_requests, dependent: :destroy
+  has_many :notifications, dependent: :destroy
 
   UPDATABLE_ATTRS = %i(name email password password_confirmation).freeze
 
@@ -19,6 +22,17 @@ class User < ApplicationRecord
   has_secure_password
 
   scope :lastest, ->{order(created_at: :desc)}
+
+  def self.from_omniauth access_token
+    data = access_token.info
+    user = User.where(email: data["email"]).first
+    user || user = User.create(name: data["name"],
+                               email: data["email"],
+                               password: Devise.friendly_token[0, 20],
+                               uid: access_token[:uid],
+                               provider: access_token[:provider])
+    user
+  end
 
   private
   def downcase_email
